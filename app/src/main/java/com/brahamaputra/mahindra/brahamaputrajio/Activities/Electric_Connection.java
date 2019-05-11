@@ -93,12 +93,8 @@ public class Electric_Connection extends BaseActivity {
     private TextView mElectricConnectionTextViewScheduledPowerCutInHrs;
     private EditText mElectricConnectionEditTextScheduledPowerCutInHrs;
     private TextView mElectricConnectionTextViewEbBillDate;
-    //private EditText mElectricConnectionEditTextEbBillDate;
     private TextView mElectricConnectionTextViewEbBillDateVal;
 
-
-    //private TextView mElectricConnectionTextViewSapVendorCode;
-    //private EditText mElectricConnectionEditTextSapVendorCode;
 
     private TextView mElectricConnectionTextViewTypeModeOfPayment;
     private TextView mElectricConnectionTextViewTypeModeOfPayment_Val;
@@ -327,10 +323,7 @@ public class Electric_Connection extends BaseActivity {
         mElectricConnectionTextViewScheduledPowerCutInHrs = (TextView) findViewById(R.id.electricConnection_textView_scheduledPowerCutInHrs);
         mElectricConnectionEditTextScheduledPowerCutInHrs = (EditText) findViewById(R.id.electricConnection_editText_scheduledPowerCutInHrs);
         mElectricConnectionTextViewEbBillDate = (TextView) findViewById(R.id.electricConnection_textView_ebBillDate);
-        //mElectricConnectionEditTextEbBillDate = (EditText) findViewById(R.id.electricConnection_editText_ebBillDate);
         mElectricConnectionTextViewEbBillDateVal = (TextView) findViewById(R.id.electricConnection_textView_ebBillDate_Val);
-        //mElectricConnectionTextViewSapVendorCode = (TextView) findViewById(R.id.electricConnection_textView_sapVendorCode);
-        //mElectricConnectionEditTextSapVendorCode = (EditText) findViewById(R.id.electricConnection_editText_sapVendorCode);
 
         mElectricConnectionTextViewTypeModeOfPayment = (TextView) findViewById(R.id.electricConnection_textView_typeModeOfPayment);
         mElectricConnectionTextViewTypeModeOfPayment_Val = (TextView) findViewById(R.id.electricConnection_textView_typeModeOfPayment_Val);
@@ -369,7 +362,6 @@ public class Electric_Connection extends BaseActivity {
         getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN
         );
-
 
     }
 
@@ -421,30 +413,6 @@ public class Electric_Connection extends BaseActivity {
                 });
             }
         });
-
-
-
-
-        /*mElectricConnectionTextViewNameOfSupplyCompanyVal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SearchableSpinnerDialog searchableSpinnerDialog = new SearchableSpinnerDialog(Electric_Connection.this,
-                        new ArrayList<String>(Arrays.asList(getResources().getStringArray(R.array.array_electricConnection_nameOfSupplyCompany))),
-                        "Name of the supply company",
-                        "Close", "#000000");
-                searchableSpinnerDialog.showSearchableSpinnerDialog();
-
-                searchableSpinnerDialog.bindOnSpinerListener(new OnSpinnerItemClick() {
-                    @Override
-                    public void onClick(ArrayList<String> item, int position) {
-
-                        str_nameOfSupplyCompany = item.get(position);
-                        mElectricConnectionTextViewNameOfSupplyCompanyVal.setText(str_nameOfSupplyCompany);
-                    }
-                });
-            }
-        });*/
-
 
         mElectricConnectionTextViewCopyOfElectricBillsVal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -752,9 +720,7 @@ public class Electric_Connection extends BaseActivity {
                 mElectricConnectionTextViewEbNeutralEarthingVal.setText(electricConnectionData.getEbNeutralEarthing());
                 mElectricConnectionEditTextAverageEbAvailabilityPerDay.setText(electricConnectionData.getAverageEbAvailability().isEmpty() ? "00:00" : electricConnectionData.getAverageEbAvailability());
                 mElectricConnectionEditTextScheduledPowerCutInHrs.setText(electricConnectionData.getScheduledPowerCut().isEmpty() ? "00:00" : electricConnectionData.getScheduledPowerCut());
-                //mElectricConnectionEditTextEbBillDate.setText(electricConnectionData.getEbBillDate());
                 mElectricConnectionTextViewEbBillDateVal.setText(electricConnectionData.getEbBillDate());
-                //mElectricConnectionEditTextSapVendorCode.setText(electricConnectionData.getSapVendorCode());
 
                 mElectricConnectionTextViewTypeModeOfPayment_Val.setText(electricConnectionData.getTypeModeOfPayment_Val());
                 mElectricConnectionEditTextBankIfscCode.setText(electricConnectionData.getBankIfscCode());
@@ -798,9 +764,8 @@ public class Electric_Connection extends BaseActivity {
             String ebNeutralEarthing = mElectricConnectionTextViewEbNeutralEarthingVal.getText().toString().trim();
             String averageEbAvailability = mElectricConnectionEditTextAverageEbAvailabilityPerDay.getText().toString().trim();
             String scheduledPowerCut = mElectricConnectionEditTextScheduledPowerCutInHrs.getText().toString().trim();
-            //String ebBillDate = mElectricConnectionEditTextEbBillDate.getText().toString().trim();
             String ebBillDate = mElectricConnectionTextViewEbBillDateVal.getText().toString().trim();
-            String sapVendorCode = "";//mElectricConnectionEditTextSapVendorCode.getText().toString().trim();
+            String sapVendorCode = "";
 
             String typeModeOfPayment_Val = mElectricConnectionTextViewTypeModeOfPayment_Val.getText().toString().trim();
             String bankIfscCode = mElectricConnectionEditTextBankIfscCode.getText().toString().trim();
@@ -886,14 +851,9 @@ public class Electric_Connection extends BaseActivity {
     private void visibilityOfEbCostPerUnitOnEbSupplierSelection(String ebSupplier) {
         if (ebSupplier.equals("Dedicated Connection")) {
             mElectricConnectionLinearLayoutEbCostPerUnitForSharedConnection.setVisibility(View.GONE);
-            //mElectricConnectionTextViewEbCostPerUnitForSharedConnection.setText("");
             mElectricConnectionEditTextEbCostPerUnitForSharedConnection.setText("");
-            //mElectricConnectionTextViewEbCostPerUnitForSharedConnection.setVisibility(View.GONE);
-            //mElectricConnectionEditTextEbCostPerUnitForSharedConnection.setVisibility(View.GONE);
         } else {
             mElectricConnectionLinearLayoutEbCostPerUnitForSharedConnection.setVisibility(View.VISIBLE);
-            //mElectricConnectionTextViewEbCostPerUnitForSharedConnection.setVisibility(View.VISIBLE);
-            //mElectricConnectionEditTextEbCostPerUnitForSharedConnection.setVisibility(View.VISIBLE);
         }
     }
 
@@ -902,12 +862,8 @@ public class Electric_Connection extends BaseActivity {
 
             mElectricConnectionLinearLayoutEbPaymentSchedule.setVisibility(View.GONE);
             mElectricConnectionTextViewEbPaymentScheduleVal.setText("");
-            //mElectricConnectionTextViewTypeOfPaymentVal.setVisibility(View.GONE);
-            //mElectricConnectionTextViewEbPaymentScheduleVal.setVisibility(View.GONE);
         } else {
             mElectricConnectionLinearLayoutEbPaymentSchedule.setVisibility(View.VISIBLE);
-            //mElectricConnectionTextViewTypeOfPaymentVal.setVisibility(View.GONE);
-            //mElectricConnectionTextViewEbPaymentScheduleVal.setVisibility(View.GONE);
         }
     }
 

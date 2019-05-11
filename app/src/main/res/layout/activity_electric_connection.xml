@@ -70,32 +70,32 @@
 
             </LinearLayout>
 
-                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                    android:layout_width="match_parent"
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/app_min_padding"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/electricConnection_textView_sanctionedLoadKVA"
+                    style="@style/FontStyle"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:padding="@dimen/app_min_padding"
-                    android:weightSum="1">
+                    android:layout_weight="0.4"
+                    android:text="Sanctioned load (KVA)"
+                    android:textColor="@color/colorBlueLink" />
 
-                    <TextView
-                        android:id="@+id/electricConnection_textView_sanctionedLoadKVA"
-                        style="@style/FontStyle"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.4"
-                        android:text="Sanctioned load (KVA)"
-                        android:textColor="@color/colorBlueLink" />
+                <EditText
+                    android:id="@+id/electricConnection_editText_sanctionedLoadKVA"
 
-                    <EditText
-                        android:id="@+id/electricConnection_editText_sanctionedLoadKVA"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:hint="Enter Sanctioned load"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal" />
 
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.6"
-                        android:hint="Enter Sanctioned load"
-                        android:imeOptions="actionNext"
-                        android:inputType="numberDecimal" />
-
-                </LinearLayout>
+            </LinearLayout>
 
             <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
@@ -123,7 +123,6 @@
                     android:inputType="numberDecimal" />
 
             </LinearLayout>
-
 
 
             <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -154,6 +153,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/app_min_padding"
+                android:visibility="gone"
                 android:weightSum="1">
 
                 <TextView
@@ -179,6 +179,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/app_min_padding"
+                android:visibility="gone"
                 android:weightSum="1">
 
                 <TextView
@@ -692,20 +693,6 @@
                     android:layout_weight="0.4"
                     android:text="Average EB Availability Per Day" />
 
-                <!-- <ir.samanjafari.easycountdowntimer.EasyCountDownTextview
-                     android:id="@+id/easyCountDownTextview"
-                     android:layout_width="0dp"
-                     android:layout_height="wrap_content"
-                     android:layout_centerInParent="true"
-                     app:hours="2"
-                     app:minute="2"
-                     app:second="15"
-                     app:setAnimation="true"
-                     app:showHours="false"
-                     app:showOnlySecond="false"
-                     app:textColor="#000"
-                     app:textSize="25sp" />-->
-
                 <EditText
                     android:id="@+id/electricConnection_editText_averageEbAvailabilityPerDay"
                     android:layout_width="0dp"
@@ -766,17 +753,6 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
                     android:text="EB Bill Date" />
-
-                <!--<EditText
-                    android:id="@+id/electricConnection_editText_ebBillDate"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.6"
-                    android:hint="Enter EB Bill Date"
-                    android:imeOptions="actionNext"
-                    android:inputType="text"
-                    android:textAlignment="viewStart" />-->
-
                 <TextView
                     android:id="@+id/electricConnection_textView_ebBillDate_Val"
                     style="@style/MyTheme"
@@ -844,7 +820,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/app_min_padding"
-                android:weightSum="1">
+                android:weightSum="1"
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/electricConnection_textView_bankIfscCode"
@@ -871,7 +848,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/app_min_padding"
-                android:weightSum="1">
+                android:weightSum="1"
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/electricConnection_textView_bankAccountNo"
