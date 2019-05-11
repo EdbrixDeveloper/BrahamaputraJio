@@ -544,15 +544,15 @@ public class Air_Conditioners extends BaseActivity {
 
                         saveACRecords(currentPos);
                         //if (checkValidationOnNoOfAcSelection() == true) {
-                        if (checkDuplicationQrCodeNew() == false) {//add 04022019 by 008
-                            if (checkValidationOnChangeNoOfAcSelection(mAirConditionersTextViewNoOfAirConditionersACprovidedVal.getText().toString().trim(), mAirConditionersTextViewNumberOfACInWorkingConditionVal.getText().toString().trim(), "onSubmit") == true) {
-                                //Save Final current reading and submit all AC data
-                                //saveACRecords(currentPos);
-                                submitDetails();
-                                startActivity(new Intent(Air_Conditioners.this, Solar_Power_System.class));
-                                finish();
-                            }
+                        //if (checkDuplicationQrCodeNew() == false) {//comment 11052019 by 008
+                        if (checkValidationOnChangeNoOfAcSelection(mAirConditionersTextViewNoOfAirConditionersACprovidedVal.getText().toString().trim(), mAirConditionersTextViewNumberOfACInWorkingConditionVal.getText().toString().trim(), "onSubmit") == true) {
+                            //Save Final current reading and submit all AC data
+                            //saveACRecords(currentPos);
+                            submitDetails();
+                            startActivity(new Intent(Air_Conditioners.this, Solar_Power_System.class));
+                            finish();
                         }
+                        //}
                     }
                 }
             }
@@ -911,11 +911,11 @@ public class Air_Conditioners extends BaseActivity {
     /*008 21112018*/
     public boolean checkValidationOfArrayFields() {
         DecimalFormatConversion();
-        String qRCodeScan = base64StringQRCodeScan;//mAirConditionersButtonQRCodeScan.getText().toString().trim();
-        /*String assetOwner = mAirConditionersTextViewAssetOwnerVal.getText().toString().trim();
-        String typeOfAcSplitWindow = mAirConditionersTextViewTypeOfAcSpliWindowVal.getText().toString().trim();
+        /*String qRCodeScan = base64StringQRCodeScan;//mAirConditionersButtonQRCodeScan.getText().toString().trim();
+        String assetOwner = mAirConditionersTextViewAssetOwnerVal.getText().toString().trim();
+        String typeOfAcSplitWindow = mAirConditionersTextViewTypeOfAcSpliWindowVal.getText().toString().trim();*/
         String manufacturerMakeModel = mAirConditionersTextViewManufacturerMakeModelVal.getText().toString().trim();
-        String acSerialNumber = mAirConditionersEditTextAcSerialNumber.getText().toString().trim();
+        /*String acSerialNumber = mAirConditionersEditTextAcSerialNumber.getText().toString().trim();
         String capacityTr = mAirConditionersEditTextCapacityTr.getText().toString().trim();
         String dateOfInstallation = mAirConditionersEditTextDateOfInstallation.getText().toString().trim();
         String amcYesNo = mAirConditionersTextViewAmcYesNoVal.getText().toString().trim();
@@ -924,7 +924,7 @@ public class Air_Conditioners extends BaseActivity {
         String natureOfProblem = mAirConditionersEditTextNatureOfProblem.getText().toString().trim();*/
 
 
-        if (qRCodeScan.isEmpty() || qRCodeScan == null) {
+        /*if (qRCodeScan.isEmpty() || qRCodeScan == null) {
             showToast("Please Scan QR Code");
             return false;
         }/* else if (assetOwner.isEmpty() || assetOwner == null) {
@@ -933,10 +933,11 @@ public class Air_Conditioners extends BaseActivity {
         } else if (typeOfAcSplitWindow.isEmpty() || typeOfAcSplitWindow == null) {
             showToast("Select Type of AC");
             return false;
-        } else if (manufacturerMakeModel.isEmpty() || manufacturerMakeModel == null) {
+        } else*/
+        if (manufacturerMakeModel.isEmpty() || manufacturerMakeModel == null) {
             showToast("Select Manufacturer/Make/Model");
             return false;
-        } else if (acSerialNumber.isEmpty() || acSerialNumber == null) {
+        } /*else if (acSerialNumber.isEmpty() || acSerialNumber == null) {
             showToast("Enter AC Serial Number");
             return false;
         } else if (capacityTr.isEmpty() || capacityTr == null) {
@@ -1222,3 +1223,4 @@ public class Air_Conditioners extends BaseActivity {
     }
 
 }
+
