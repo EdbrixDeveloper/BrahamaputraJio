@@ -359,13 +359,6 @@ public class ExternalTenantsPersonaldetails extends BaseActivity {
         String nameofTenant = mExternalTenantsPersonaldetailsTextViewNameoftheTenantVal.getText().toString().trim();
         String typeofTenant = mExternalTenantsPersonaldetailsTextViewTypeofTenantVal.getText().toString().trim();
         String positionattheTower = mExternalTenantsPersonaldetailsEditTextPositionattheTower.getText().toString().trim();
-        String dateofstartofTenancy = mExternalTenantsPersonaldetailsEditTextDateofthestartofTenancy.getText().toString().trim();
-        String dateofstartofRadiation = mExternalTenantsPersonaldetailsEditTextDateofthestartofRadiation.getText().toString().trim();
-        String nameofContactPerson = mExternalTenantsPersonaldetailsEditTextNameoftheContactPerson.getText().toString().trim();
-        //String rentalValue = mExternalTenantsPersonaldetailsEditTextrentalValue.getText().toString().trim();
-        String addressofContactPerson = mExternalTenantsPersonaldetailsEditTextAddressoftheContactPerson.getText().toString().trim();
-        String contactPersonMobile = mExternalTenantsPersonaldetailsEditTextTelephoneNoofContactPersonMobile.getText().toString().trim();
-        String contactPersonLandline = mExternalTenantsPersonaldetailseditTextTelephoneNoofContactPersonLandline.getText().toString().trim();
 
 
         if (nameofTenant.isEmpty() && nameofTenant == null) {
@@ -377,83 +370,7 @@ public class ExternalTenantsPersonaldetails extends BaseActivity {
         } else if (positionattheTower.isEmpty() && positionattheTower == null) {
             showToast("Enter Position at the Tower");
             return false;
-        } else if (dateofstartofTenancy.isEmpty() && dateofstartofTenancy == null) {
-            showToast("Enter Date of the start of Tenancy");
-            return false;
-        } else if (dateofstartofTenancy.isEmpty() && dateofstartofTenancy == null) {
-            showToast("Enter Date of the start of Tenancy");
-            return false;
-        } else if (dateofstartofRadiation.isEmpty() && dateofstartofRadiation == null) {
-            showToast("Enter Date of Start of Radiation");
-            return false;
-        } else if (nameofContactPerson.isEmpty() && nameofContactPerson == null) {
-            showToast("Enter Name of the Contact Person");
-            return false;
-        } else if (addressofContactPerson.isEmpty() && addressofContactPerson == null) {
-            showToast("Enter Address of the ContactPerson");
-            return false;
-        } else if (contactPersonMobile.isEmpty() && contactPersonMobile == null) {
-            showToast("Enter Mobile Number of Contact Person ");
-            return false;
-        } else if (contactPersonLandline.isEmpty() && contactPersonLandline == null) {
-            showToast("Enter Landline Number of Contact Person ");
-            return false;
-        } else if (date_compare(dateofstartofTenancy, dateofstartofRadiation) == false) {
-            showToast("Select Date of the start of Tenancy is less than or equal to Date of Start of Radiation");
-            return false;
         } else return true;
-
-        /*if (!nameofTenant.isEmpty() && nameofTenant != null) {
-            if (!typeofTenant.isEmpty() && typeofTenant != null) {
-                if (!positionattheTower.isEmpty() && positionattheTower != null) {
-                    if (!dateofstartofTenancy.isEmpty() && dateofstartofTenancy != null) {
-                        if (!dateofstartofTenancy.isEmpty() && dateofstartofTenancy != null) {
-                            if (!dateofstartofRadiation.isEmpty() && dateofstartofRadiation != null) {
-                                if (!nameofContactPerson.isEmpty() && nameofContactPerson != null) {
-                                    if (!addressofContactPerson.isEmpty() && addressofContactPerson != null) {
-                                        if (!contactPersonMobile.isEmpty() && contactPersonMobile != null) {
-                                            if (!contactPersonLandline.isEmpty() && contactPersonLandline != null) {
-                                                return true;
-                                            } else {
-                                                showToast("Enter Landline Number of Contact Person ");
-                                                return false;
-                                            }
-                                        } else {
-                                            showToast("Enter Mobile Number of Contact Person ");
-                                            return false;
-                                        }
-                                    } else {
-                                        showToast("Enter Address of the ContactPerson");
-                                        return false;
-                                    }
-                                } else {
-                                    showToast("Enter Name of the Contact Person");
-                                    return false;
-                                }
-                            } else {
-                                showToast("Enter Date of Start of Radiation");
-                                return false;
-                            }
-                        } else {
-                            showToast("Enter Date of the start of Tenancy");
-                            return false;
-                        }
-                    } else {
-                        showToast("Enter Date of the start of Tenancy");
-                        return false;
-                    }
-                } else {
-                    showToast("Enter Position at the Tower");
-                    return false;
-                }
-            } else {
-                showToast("Select Type of Tenant");
-                return false;
-            }
-        } else {
-            showToast("Select Name of the Tenant");
-            return false;
-        }*/
     }
 
     public boolean date_compare(String dateStartTenancy, String dateStartRadiation) {
@@ -642,7 +559,7 @@ public class ExternalTenantsPersonaldetails extends BaseActivity {
         String addressofContactPerson = mExternalTenantsPersonaldetailsEditTextAddressoftheContactPerson.getText().toString().trim();
         String contactPersonMobile = mExternalTenantsPersonaldetailsEditTextTelephoneNoofContactPersonMobile.getText().toString().trim();
         String contactPersonLandline = mExternalTenantsPersonaldetailseditTextTelephoneNoofContactPersonLandline.getText().toString().trim();
-        ExternalTenantsPersonalDetailsData externalTenantsPersonalDetailsData = new ExternalTenantsPersonalDetailsData(nameofTenant, rentalValue,typeofTenant, positionattheTower, dateofstartofTenancy, dateofstartofRadiation, nameofContactPerson, addressofContactPerson, contactPersonMobile, contactPersonLandline);
+        ExternalTenantsPersonalDetailsData externalTenantsPersonalDetailsData = new ExternalTenantsPersonalDetailsData(nameofTenant, rentalValue, typeofTenant, positionattheTower, dateofstartofTenancy, dateofstartofRadiation, nameofContactPerson, addressofContactPerson, contactPersonMobile, contactPersonLandline);
 
 
         if (externalTenantsPersonalDetailsDataList.size() > 0) {
