@@ -510,9 +510,6 @@ public class PowerManagementSystem extends BaseActivity {
         if (newFieldAvailability.isEmpty() || newFieldAvailability == null) {
             showToast("Select Availability");
             return false;
-        } else if ((qRCodeScan.isEmpty() || qRCodeScan == null) && (newFieldAvailability.equals("Yes"))) {
-            showToast("Please Scan QR Code");
-            return false;
         } else return true;
 
     }
@@ -648,29 +645,6 @@ public class PowerManagementSystem extends BaseActivity {
 
             }
         }
-
-        /*This Commented By 008 on 15-11-2018 For QR Code Purpose
-        if (requestCode == MY_PERMISSIONS_REQUEST_CAMERA &&
-                resultCode == RESULT_OK) {
-            if (imageFileUri != null) {
-                try {
-                    Bitmap imageBitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageFileUri);
-//                            (Bitmap) data.getExtras().get("data");
-//                mImageView.setImageBitmap(imageBitmap);
-                    ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                    imageBitmap.compress(Bitmap.CompressFormat.JPEG, 70, stream);
-                    byte[] bitmapDataArray = stream.toByteArray();
-                    base64StringPowerManagementSystem = Base64.encodeToString(bitmapDataArray, Base64.DEFAULT);
-                    mPowerManagementSystemButtonQRCodeScanView.setVisibility(View.VISIBLE);
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-            }
-        } else {
-            imageFileName = "";
-            imageFileUri = null;
-            mPowerManagementSystemButtonQRCodeScanView.setVisibility(View.GONE);
-        }*/
 
     }
 
