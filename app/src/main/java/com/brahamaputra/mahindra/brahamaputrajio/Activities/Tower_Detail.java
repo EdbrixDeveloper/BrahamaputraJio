@@ -44,9 +44,9 @@ public class Tower_Detail extends BaseActivity {
     private TextView mTowerDetailTextViewTypeOfTowerVal;
     private TextView mTowerDetailTextViewHeightOfTower;
     private EditText mTowerDetailEditTextHeightOfTower;
-    private EditText mTowerDetailEditTextBookValueOfTheTower;
-    private TextView mTowerDetailTextViewDateOfPaintingOfTheTower;
-    private EditText mTowerDetailEditTextDateOfPaintingOfTheTower;
+    //private EditText mTowerDetailEditTextBookValueOfTheTower;
+    //private TextView mTowerDetailTextViewDateOfPaintingOfTheTower;
+    //private EditText mTowerDetailEditTextDateOfPaintingOfTheTower;
     private TextView mTowerDetailTextViewSignboard;
     private TextView mTowerDetailTextViewSignboardVal;
     private TextView mTowerDetailTextViewDangerSignageboard;
@@ -56,7 +56,7 @@ public class Tower_Detail extends BaseActivity {
     private TextView mTowerDetailTextViewWarningSignageboard;
     private TextView mTowerDetailTextViewWarningSignageboardVal;
 
-    final Calendar myCalendar = Calendar.getInstance();
+    //final Calendar myCalendar = Calendar.getInstance();
 
     String str_tower;
     String str_typeOfTower;
@@ -90,7 +90,7 @@ public class Tower_Detail extends BaseActivity {
         offlineStorageWrapper = OfflineStorageWrapper.getInstance(Tower_Detail.this, userId, ticketName);
         setInputDetails();
 
-        final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+        /*final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
 
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear,
@@ -101,9 +101,9 @@ public class Tower_Detail extends BaseActivity {
                 updateLabel();
             }
 
-        };
+        };*/
 
-        mTowerDetailEditTextDateOfPaintingOfTheTower.setOnClickListener(new View.OnClickListener() {
+        /*mTowerDetailEditTextDateOfPaintingOfTheTower.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DatePickerDialog dialog = new DatePickerDialog(Tower_Detail.this, date, myCalendar
@@ -113,7 +113,7 @@ public class Tower_Detail extends BaseActivity {
                 dialog.getDatePicker().setMaxDate(new Date().getTime());
                 dialog.show();
             }
-        });
+        });*/
     }
 
     private void assignViews() {
@@ -121,11 +121,11 @@ public class Tower_Detail extends BaseActivity {
         mTowerDetailTextViewTowerVal = (TextView) findViewById(R.id.towerDetail_textView_tower_val);
         mTowerDetailTextViewTypeOfTower = (TextView) findViewById(R.id.towerDetail_textView_typeOfTower);
         mTowerDetailTextViewTypeOfTowerVal = (TextView) findViewById(R.id.towerDetail_textView_typeOfTower_val);
-        mTowerDetailEditTextBookValueOfTheTower = (EditText) findViewById(R.id.towerDetail_editText_BookValueOfTheTower);
+        //mTowerDetailEditTextBookValueOfTheTower = (EditText) findViewById(R.id.towerDetail_editText_BookValueOfTheTower);
         mTowerDetailTextViewHeightOfTower = (TextView) findViewById(R.id.towerDetail_textView_HeightOfTower);
         mTowerDetailEditTextHeightOfTower = (EditText) findViewById(R.id.towerDetail_editText_heightOfTower);
-        mTowerDetailTextViewDateOfPaintingOfTheTower = (TextView) findViewById(R.id.towerDetail_textView_dateOfPaintingOfTheTower);
-        mTowerDetailEditTextDateOfPaintingOfTheTower = (EditText) findViewById(R.id.towerDetail_editText_dateOfPaintingOfTheTower);
+//        mTowerDetailTextViewDateOfPaintingOfTheTower = (TextView) findViewById(R.id.towerDetail_textView_dateOfPaintingOfTheTower);
+        //mTowerDetailEditTextDateOfPaintingOfTheTower = (EditText) findViewById(R.id.towerDetail_editText_dateOfPaintingOfTheTower);
         mTowerDetailTextViewSignboard = (TextView) findViewById(R.id.towerDetail_textView_signboard);
         mTowerDetailTextViewSignboardVal = (TextView) findViewById(R.id.towerDetail_textView_signboard_val);
         mTowerDetailTextViewDangerSignageboard = (TextView) findViewById(R.id.towerDetail_textView_dangerSignageboard);
@@ -245,7 +245,7 @@ public class Tower_Detail extends BaseActivity {
             }
         });
 
-        /*mTowerDetailTextViewSignboardVal.setOnClickListener(new View.OnClickListener() {
+        mTowerDetailTextViewSignboardVal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SearchableSpinnerDialog searchableSpinnerDialog = new SearchableSpinnerDialog(Tower_Detail.this,
@@ -263,7 +263,7 @@ public class Tower_Detail extends BaseActivity {
                     }
                 });
             }
-        });*/
+        });
 
     }
 
@@ -276,12 +276,12 @@ public class Tower_Detail extends BaseActivity {
 
     }
 
-    private void updateLabel() {
+    /*private void updateLabel() {
         String myFormat = "dd/MMM/yyyy";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
-        mTowerDetailEditTextDateOfPaintingOfTheTower.setText(sdf.format(myCalendar.getTime()));
-    }
+        //mTowerDetailEditTextDateOfPaintingOfTheTower.setText(sdf.format(myCalendar.getTime()));
+    }*/
 
     private void setInputDetails() {
         try {
@@ -294,9 +294,9 @@ public class Tower_Detail extends BaseActivity {
 
                 mTowerDetailTextViewTowerVal.setText(towerDetailsData.getTowerName());
                 mTowerDetailTextViewTypeOfTowerVal.setText(towerDetailsData.getTowerType());
-                mTowerDetailEditTextBookValueOfTheTower.setText(towerDetailsData.getBookValueOfTheTower());
+                //mTowerDetailEditTextBookValueOfTheTower.setText(towerDetailsData.getBookValueOfTheTower());
                 mTowerDetailEditTextHeightOfTower.setText(towerDetailsData.getTowerHeight());
-                mTowerDetailEditTextDateOfPaintingOfTheTower.setText(towerDetailsData.getDateOfTowerPainting());
+                //mTowerDetailEditTextDateOfPaintingOfTheTower.setText(towerDetailsData.getDateOfTowerPainting());
                 mTowerDetailTextViewSignboardVal.setText(towerDetailsData.getBoardSign());
                 mTowerDetailSpinnerDangerSignageboardVal.setText(towerDetailsData.getDangerSignBoard());
                 mTowerDetailTextViewCautionSignageboardVal.setText(towerDetailsData.getCautionSignBoard());
@@ -315,15 +315,15 @@ public class Tower_Detail extends BaseActivity {
 
             String towerName = mTowerDetailTextViewTowerVal.getText().toString().trim();
             String towerType = mTowerDetailTextViewTypeOfTowerVal.getText().toString().trim();
-            String bookValueOfTheTower = mTowerDetailEditTextBookValueOfTheTower.getText().toString().trim();
+            //String bookValueOfTheTower = mTowerDetailEditTextBookValueOfTheTower.getText().toString().trim();
             String towerHeight = mTowerDetailEditTextHeightOfTower.getText().toString().trim();
-            String dateOfTowerPainting = mTowerDetailEditTextDateOfPaintingOfTheTower.getText().toString().trim();
+            //String dateOfTowerPainting = mTowerDetailEditTextDateOfPaintingOfTheTower.getText().toString().trim();
             String boardSign = mTowerDetailTextViewSignboardVal.getText().toString().trim();
             String dangerSignBoard = mTowerDetailSpinnerDangerSignageboardVal.getText().toString().trim();
             String cautionSignBoard = mTowerDetailTextViewCautionSignageboardVal.getText().toString().trim();
             String warningSignBoard = mTowerDetailTextViewWarningSignageboardVal.getText().toString().trim();
 
-            towerDetailsData = new TowerDetailsData(towerName, towerType, bookValueOfTheTower, towerHeight, dateOfTowerPainting, boardSign, dangerSignBoard, cautionSignBoard, warningSignBoard);
+            towerDetailsData = new TowerDetailsData(towerName, towerType, /*bookValueOfTheTower, */towerHeight, /*dateOfTowerPainting,*/ boardSign, dangerSignBoard, cautionSignBoard, warningSignBoard);
             hotoTransactionData.setTowerDetailsData(towerDetailsData);
 
             Gson gson2 = new GsonBuilder().create();

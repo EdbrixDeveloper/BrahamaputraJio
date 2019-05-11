@@ -149,6 +149,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/app_min_padding"
+                    android:visibility="gone"
                     android:weightSum="1">
 
                     <TextView
@@ -179,6 +180,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/app_min_padding"
+                    android:visibility="gone"
                     android:weightSum="1">
 
                     <TextView
@@ -209,6 +211,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/app_min_padding"
+                    android:visibility="gone"
                     android:weightSum="1">
 
                     <TextView
@@ -234,6 +237,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/app_min_padding"
+                    android:visibility="gone"
                     android:weightSum="1">
 
                     <TextView
@@ -243,6 +247,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
                         android:singleLine="false"
+
                         android:text="Name of the Contact Person" />
 
                     <EditText
@@ -263,6 +268,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/app_min_padding"
+                    android:visibility="gone"
                     android:weightSum="1">
 
                     <TextView
@@ -293,6 +299,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:padding="@dimen/app_min_padding"
+                    android:visibility="gone"
                     android:weightSum="1">
 
                     <TextView
@@ -324,6 +331,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:padding="@dimen/app_min_padding"
+                    android:visibility="gone"
                     android:weightSum="1">
 
                     <TextView

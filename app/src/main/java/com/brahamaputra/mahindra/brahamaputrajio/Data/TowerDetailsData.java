@@ -58,12 +58,12 @@ public class TowerDetailsData {
         this.bookValueOfTheTower = "";
     }
 
-    public TowerDetailsData(String towerName, String towerType,String bookValueOfTheTower, String towerHeight, String dateOfTowerPainting, String boardSign, String dangerSignBoard, String cautionSignBoard, String warningSignBoard) {
+    public TowerDetailsData(String towerName, String towerType,/*String bookValueOfTheTower,*/ String towerHeight, /*String dateOfTowerPainting,*/ String boardSign, String dangerSignBoard, String cautionSignBoard, String warningSignBoard) {
         this.towerName = towerName;
         this.towerType = towerType;
-        this.bookValueOfTheTower = bookValueOfTheTower;
+        //this.bookValueOfTheTower = bookValueOfTheTower;
         this.towerHeight = towerHeight;
-        this.dateOfTowerPainting = dateOfTowerPainting;
+        //this.dateOfTowerPainting = dateOfTowerPainting;
         this.boardSign = boardSign;
         this.dangerSignBoard = dangerSignBoard;
         this.cautionSignBoard = cautionSignBoard;

@@ -50,26 +50,26 @@
     </string-array>
 
     <string-array name="listView_hotoSections_sections">
-        <item>Land Details</item>
+       <!-- <item>Land Details</item>-->
         <item>Tower Details</item>
         <item>Earth Resistance (Tower)</item>
         <item>Earth Resistance (Equipment)</item>
         <item>Electric Connection</item>
         <item>Air Conditioners</item>
-        <item>Solar Power System</item>
+        <!--<item>Solar Power System</item>-->
         <item>Power Plant Details</item>
         <item>Power Backups (DG)</item>
         <item>Shelter</item>
-        <item>Media</item>
+       <!-- <item>Media</item>-->
         <item>Battery Set</item>
         <item>External Tenants Personal details</item>
         <item>Total DC load (Kilo Watt)</item>
-        <item>Active Equipment Details</item>
+       <!-- <item>Active Equipment Details</item>-->
         <item>Power Management System </item>
         <item>General and Safety Measures</item>
         <item>ACDB/DCDB</item>
         <item>Servo Stabilizer</item>
-        <item>Details Of Unused Materials</item>
+        <!--<item>Details Of Unused Materials</item>-->
         <item>Photos To Be Captured</item>
 
     </string-array>

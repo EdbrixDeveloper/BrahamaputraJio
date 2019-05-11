@@ -73,70 +73,59 @@ public class HotoSectionsListActivity extends BaseActivity {
 
                 switch (position) {
                     case 0:
-                        startActivity(new Intent(HotoSectionsListActivity.this, Land_Details.class));
-                        break;
-                    case 1:
                         startActivity(new Intent(HotoSectionsListActivity.this, Tower_Detail.class));
                         break;
-                    case 2:
+                    case 1:
                         startActivity(new Intent(HotoSectionsListActivity.this, Earth_Resistance_Tower.class));
                         break;
-                    case 3:
+                    case 2:
                         startActivity(new Intent(HotoSectionsListActivity.this, Earth_Resistance_Equipment.class));
                         break;
-                    case 4:
-                        if(!(Constants.hototicket_sourceOfPower.equals("Non EB"))) {
+                    case 3:
+                        if (!(Constants.hototicket_sourceOfPower.equals("Non EB"))) {
                             startActivity(new Intent(HotoSectionsListActivity.this, Electric_Connection.class));
                         }
                         break;
-                    case 5:
+                    case 4:
                         startActivity(new Intent(HotoSectionsListActivity.this, Air_Conditioners.class));
                         break;
-                    case 6:
-                        startActivity(new Intent(HotoSectionsListActivity.this, Solar_Power_System.class));
-                        break;
-                    case 7:
+                    case 5:
                         startActivity(new Intent(HotoSectionsListActivity.this, PowerPlantDetailsActivity.class));
                         break;
-                    case 8:
+                    case 6:
                         startActivity(new Intent(HotoSectionsListActivity.this, Power_Backups_DG.class));
                         break;
-                    case 9:
+                    case 7:
                         startActivity(new Intent(HotoSectionsListActivity.this, Shelter.class));
                         break;
-                    case 10:
+                    /*case 8:
                         startActivity(new Intent(HotoSectionsListActivity.this, Media.class));
-                        break;
-                    case 11:
+                        break;*/
+                    case 8:
                         startActivity(new Intent(HotoSectionsListActivity.this, Battery_Set.class));
                         break;
-                    case 12:
+                    case 9:
                         startActivity(new Intent(HotoSectionsListActivity.this, ExternalTenantsPersonaldetails.class));
                         break;
-                    case 13:
+                    case 10:
                         startActivity(new Intent(HotoSectionsListActivity.this, Total_DC_Load_site.class));
                         break;
-                    case 14:
-                        startActivity(new Intent(HotoSectionsListActivity.this, ActiveequipmentDetails.class));
-                        break;
-                    case 15:
+                    case 11:
                         startActivity(new Intent(HotoSectionsListActivity.this, PowerManagementSystem.class));
                         break;
-                    case 16:
+                    case 12:
                         startActivity(new Intent(HotoSectionsListActivity.this, GeneralAndSafetyMeasures.class));
                         break;
-                    case 17:
+                    case 13:
                         startActivity(new Intent(HotoSectionsListActivity.this, ACDB_DCDB.class));
                         break;
-                    case 18:
+                    case 14:
                         startActivity(new Intent(HotoSectionsListActivity.this, ServoStabilizer.class));
                         break;
-                    case 19:
-                        startActivity(new Intent(HotoSectionsListActivity.this, DetailsOfUnusedMaterials.class));
-                        break;
-                    case 20:
+                    case 15:
                         startActivityForResult(new Intent(HotoSectionsListActivity.this, PhotoCaptureActivity.class), RESULT_READING_COMPLETED);
                         break;
+
                 }
             }
         });

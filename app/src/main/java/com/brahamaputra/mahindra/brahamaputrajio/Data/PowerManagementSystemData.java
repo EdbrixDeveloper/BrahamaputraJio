@@ -167,7 +167,7 @@ public class PowerManagementSystemData {
         if (newFieldAvailability.equals("No")) {
             this.isSubmited = 2;
         } else if (newFieldAvailability.equals("Yes")) {
-            if (!this.powerManagementSystemQR.isEmpty() && !this.assetOwner.isEmpty() && !this.powerManagementSystemType.isEmpty() && !this.powerManagementSystemMake.isEmpty() && !this.serialNumber.isEmpty()) {
+            if (!this.powerManagementSystemType.isEmpty() && !this.powerManagementSystemMake.isEmpty() && !this.serialNumber.isEmpty()) {//!this.powerManagementSystemQR.isEmpty() && !this.assetOwner.isEmpty() &&
                 this.isSubmited = 2;
             } else {
                 this.isSubmited = 1;

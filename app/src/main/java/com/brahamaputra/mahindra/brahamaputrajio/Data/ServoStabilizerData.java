@@ -52,7 +52,7 @@ public class ServoStabilizerData {
         if (servoStabilizerWorkingStatus.equals("Not Available")) {
             this.isSubmited = 2;
         } else {
-            if (!this.servoStabilizer_Qr.isEmpty() && !this.servoStabilizerWorkingStatus.isEmpty()) {
+            if (!this.servoStabilizerWorkingStatus.isEmpty()) {//!this.servoStabilizer_Qr.isEmpty() &&
                 this.isSubmited = 2;
             } else {
                 this.isSubmited = 1;
