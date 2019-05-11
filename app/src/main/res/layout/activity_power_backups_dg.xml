@@ -102,6 +102,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/app_min_padding"
+                    android:visibility="gone"
                     android:weightSum="1">
 
                     <TextView
@@ -151,6 +152,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/app_min_padding"
+                    android:visibility="gone"
                     android:weightSum="1">
 
                     <TextView
@@ -177,6 +179,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/app_min_padding"
+                    android:visibility="gone"
                     android:paddingBottom="@dimen/app_min_padding"
                     android:weightSum="1">
                     <!--style="@style/FontStyle"-->
@@ -197,6 +200,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_gravity="center"
+                    android:visibility="gone"
                     android:background="#a40404" />
 
                 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -338,6 +342,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/app_min_padding"
+                    android:visibility="gone"
                     android:weightSum="1">
 
                     <TextView
@@ -390,6 +395,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/app_min_padding"
+                    android:visibility="gone"
                     android:weightSum="1">
 
                     <TextView
@@ -416,6 +422,7 @@
                     android:id="@+id/powerBackupsDg_linearLayout_validityOfAmc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:padding="@dimen/app_min_padding"
                     android:weightSum="1">
 
@@ -660,6 +667,7 @@
                     android:id="@+id/powerBackupsDg_linearLayout_dgBatteryStatusQRCodeScan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:padding="@dimen/app_min_padding"
                     android:weightSum="1">
 

@@ -320,9 +320,9 @@ public class PowerPlantDetailsModulesReadingsActivity extends BaseActivity {
                     } else if (currentPos == (totalCount - 1)) {
                         //Save Final current reading and submit all AC data
                         saveRecords(currentPos);
-                        if (checkDuplicationQrCode() == false) {
-                            submitDetails();
-                        }
+                        /* if (checkDuplicationQrCode() == false) {*/
+                        submitDetails();
+                        /*}*/
                         //startActivity(new Intent(DetailsOfUnusedMaterials.this, PhotoCaptureActivity.class));
                         //finish();
                     }
@@ -340,12 +340,16 @@ public class PowerPlantDetailsModulesReadingsActivity extends BaseActivity {
     }
 
     private boolean checkValidtionForArrayFields() {
-        if (base64StringQRCodeScan.isEmpty()) {
-            showToast("Please Scan QR Code");
+        String makeOrManufacture = mPowerPlantDetailsTextViewModuleMakeVal.getText().toString().trim();
+        String moduleCapacity = mPowerPlantDetailsEditTextModuleCapacity.getText().toString().trim();
+
+        if (makeOrManufacture.isEmpty() || makeOrManufacture == null) {
+            showToast("Please Select Manufacture/Make");
             return false;
-        } /*else if (checkDuplicationQrCode(currentPos)) {
+        } else if (moduleCapacity.isEmpty() || moduleCapacity == null) {
+            showToast("Please Enter Module Capacity");
             return false;
-        }*/ else return true;
+        } else return true;
     }
 
     @Override

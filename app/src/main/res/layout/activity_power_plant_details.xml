@@ -98,6 +98,7 @@
                 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:padding="@dimen/app_min_padding"
                     android:weightSum="1">
 
@@ -150,6 +151,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/app_min_padding"
+                    android:visibility="gone"
                     android:weightSum="1">
 
                     <TextView
@@ -458,6 +460,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/app_min_padding"
+                    android:visibility="gone"
                     android:weightSum="1">
 
                     <TextView
@@ -484,6 +487,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/app_min_padding"
+                    android:visibility="gone"
                     android:weightSum="1">
 
                     <TextView
@@ -511,6 +515,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/app_min_padding"
+                    android:visibility="gone"
                     android:weightSum="1">
 
                     <TextView

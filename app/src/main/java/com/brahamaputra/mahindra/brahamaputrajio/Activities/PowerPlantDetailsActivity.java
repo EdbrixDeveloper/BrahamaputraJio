@@ -648,7 +648,7 @@ public class PowerPlantDetailsActivity extends BaseActivity {
                     } else if (currentPos == (totalPlantCount - 1)) {
                         savePlantRecords(currentPos);
                         //if (checkValidationOnNoOfPowerPlant() == true) {
-                        if (checkDuplicationQrCode() == false) {
+                        /*if (checkDuplicationQrCode() == false) {*/
                             if (checkValidationOnChangeNoOfPowerPlant(mPowerPlantDetailsTextViewNumberOfPowerPlantVal.getText().toString().trim(), mPowerPlantDetailsTextViewNumberOfPowerPlantWorkingVal.getText().toString().trim(), "onSubmit") == true) {
                                 //Save Final current reading and submit all  data
                                 //savePlantRecords(currentPos);
@@ -656,7 +656,7 @@ public class PowerPlantDetailsActivity extends BaseActivity {
                                 startActivity(new Intent(PowerPlantDetailsActivity.this, Power_Backups_DG.class));
                                 finish();
                             }
-                        }
+                        /*}*/
                     }
                 }
             }
@@ -1002,10 +1002,10 @@ public class PowerPlantDetailsActivity extends BaseActivity {
         if (numberOfPowerPlant.isEmpty() || numberOfPowerPlant == null) {
             showToast("Select Number Of Power Plant");
             return false;
-        } else if (qRCodeScan.isEmpty() || qRCodeScan == null) {
+        } /*else if (qRCodeScan.isEmpty() || qRCodeScan == null) {
             showToast("Please Scan QR Code");
             return false;
-        } else if (!numberOfModules.isEmpty()) {
+        }*/ else if (!numberOfModules.isEmpty()) {
             if (powerPlantDetailsModulesData.size() != Integer.valueOf(numberOfModules == "" ? "0" : numberOfModules)) {
                 showToast("No of Rectifier Modules Readings should be equal to selected number of Rectifier Modules. ");
                 return false;

@@ -554,7 +554,7 @@ public class Battery_Set extends BaseActivity {
                     saveRecords(currentPos);
                     //Save Final current reading and submit all AC data
 
-                    if (checkDuplicationQrCodeNew() == false) {//add 04022019 by 008
+                   /* if (checkDuplicationQrCodeNew() == false) {*///add 04022019 by 008
                          if (checkTypeOfBatteryIsSame() == false) {//add 23032019 by tiger for new requirement
                             if (checkValidation(mBatterySetTextViewNoofBatterySetProvidedVal.getText().toString().trim(), mBatterySetTextViewNumberofBatteryBankWorkingVal.getText().toString().trim(), "onSubmit") == true) {
                                 //saveRecords(currentPos);
@@ -563,7 +563,7 @@ public class Battery_Set extends BaseActivity {
                                 finish();
                             }
                         }
-                    }
+                    /*}*/
                 }
                 /*}*/
             }

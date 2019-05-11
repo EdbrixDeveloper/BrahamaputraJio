@@ -937,7 +937,7 @@ public class Power_Backups_DG extends BaseActivity {
                     } else if (currentPos == (totalCount - 1)) {
                         saveRecords(currentPos);
                         //if (checkValidationOnNoOfEngineAlternatorSelection() == true) {
-                        if (checkDuplicationQrCodeNew() == false) {//add 04022019 by 008
+                        /*if (checkDuplicationQrCodeNew() == false) {*///add 04022019 by 008
                             if (checkValidationOnChangeNoOfEngineAlternatorSelection(mPowerBackupsDgTextViewNoOfEngineAlternatorSetsprovidedVal.getText().toString().trim(), mPowerBackupsDgTextViewNumberOfWorkingDgVal.getText().toString().trim(), "onSubmit") == true) {
                                 //Save Final current reading and submit all AC data
                                 //saveRecords(currentPos);
@@ -945,7 +945,7 @@ public class Power_Backups_DG extends BaseActivity {
                                 startActivity(new Intent(Power_Backups_DG.this, Shelter.class));
                                 finish();
                             }
-                        }
+                        /*}*/
                     }
                 }
             }
@@ -1571,29 +1571,6 @@ public class Power_Backups_DG extends BaseActivity {
 
     /*008 21112018*/
     public boolean checkValidationOnChangeNoOfEngineAlternatorSelection(String noOfEngineAlternator, String numberOfWorkingDg, String methodFlag) {
-        //String noOfEngineAlternator = mPowerBackupsDgTextViewNoOfEngineAlternatorSetsprovidedVal.getText().toString().trim();
-        //String numberOfWorkingDg = mPowerBackupsDgTextViewNumberOfWorkingDgVal.getText().toString().trim();
-        /*if (!noOfEngineAlternator.isEmpty() && noOfEngineAlternator != null) {
-            if (Integer.valueOf(noOfEngineAlternator) > 0) {
-                if (!numberOfWorkingDg.isEmpty() && numberOfWorkingDg != null) {
-                    if (Integer.valueOf(numberOfWorkingDg) <= Integer.valueOf(noOfEngineAlternator)) {
-                        return true;
-                    } else {
-                        showToast("Select Number of working DG is less than or equal to Number of Engine Alternator sets provided");
-                        return false;
-                    }
-                } else {
-                    showToast("Select Number of working DG");
-                    return false;
-                }
-            } else {
-                return true;
-            }
-        } else {
-            showToast("Select Number of Engine Alternator sets provided");
-            return false;
-        }*/
-
 
         if (noOfEngineAlternator.isEmpty() || noOfEngineAlternator == null) {
             showToast("Select Number of Engine Alternator sets provided");
@@ -1645,12 +1622,12 @@ public class Power_Backups_DG extends BaseActivity {
     /*008 21112018*/
     public boolean checkValidationOfArrayFields() {
         DecimalFormatConversion();
-        String qRCodeScan = base64StringQRCodeScan;
+         /*String qRCodeScan = base64StringQRCodeScan;
         String dgqRCodeScan = base64StringDgBatteryStatusQRCodeScan;
         String dgStartingBatteryStatus = mPowerBackupsDgTextViewDgStartingBatteryStatusVal.getText().toString().trim();
-        /*String assetOwner = mPowerBackupsDgTextViewAssetOwnerVal.getText().toString().trim();
+       String assetOwner = mPowerBackupsDgTextViewAssetOwnerVal.getText().toString().trim();*/
         String manufacturerMakeModel = mPowerBackupsDgTextViewManufacturerMakeModelVal.getText().toString().trim();
-        String capacityInKva = mPowerBackupsDgTextViewCapacityInKvaVal.getText().toString().trim();
+        /*String capacityInKva = mPowerBackupsDgTextViewCapacityInKvaVal.getText().toString().trim();
         String autoManual = mPowerBackupsDgTextViewAutoManualVal.getText().toString().trim();
         String dieselTankCapacity = mPowerBackupsDgEditTextDieselTankCapacity.getText().toString().trim();
         String dateOfInstallation = mPowerBackupsDgEditTextDateOfInstallation.getText().toString().trim();
@@ -1676,16 +1653,16 @@ public class Power_Backups_DG extends BaseActivity {
         String natureOfProblem = mPowerBackupsDgEditTextNatureOfProblem.getText().toString().trim();*/
 
 
-        if (qRCodeScan.isEmpty() || qRCodeScan == null) {
+        /*if (qRCodeScan.isEmpty() || qRCodeScan == null) {
             showToast("Please Scan QR Code");
             return false;
-        } /*else if (assetOwner.isEmpty() || assetOwner == null) {
+        }*/ /*else if (assetOwner.isEmpty() || assetOwner == null) {
             showToast("Select Asset Owner");
             return false;
-        } else if (manufacturerMakeModel.isEmpty() || manufacturerMakeModel == null) {
+        } else */if (manufacturerMakeModel.isEmpty() || manufacturerMakeModel == null) {
             showToast("Select Manufacturer/Make/Model");
             return false;
-        } else if (capacityInKva.isEmpty() || capacityInKva == null) {
+        }/* else if (capacityInKva.isEmpty() || capacityInKva == null) {
             showToast("Select Capacity in KVA");
             return false;
         } else if (autoManual.isEmpty() || autoManual == null) {
@@ -1754,10 +1731,10 @@ public class Power_Backups_DG extends BaseActivity {
         } else if (workingCondition.isEmpty() || workingCondition == null) {
             showToast("Select Working Condition");
             return false;
-        }*/ else if ((dgqRCodeScan.isEmpty() || dgqRCodeScan == null) && dgStartingBatteryStatus.equals("Yes")) {
+        } else if ((dgqRCodeScan.isEmpty() || dgqRCodeScan == null) && dgStartingBatteryStatus.equals("Yes")) {
             showToast("Please Scan DG Starting Battery QR Code ");
             return false;
-        } /*else if (checkDuplicationQrCode(currentPos)) {
+        } *//*else if (checkDuplicationQrCode(currentPos)) {
             return false;
         }comment 04022019 by 008 for new requirement*/ else return true;
 
