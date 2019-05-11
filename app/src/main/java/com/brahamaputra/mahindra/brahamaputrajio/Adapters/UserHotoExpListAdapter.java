@@ -19,18 +19,7 @@ import java.util.List;
 public class UserHotoExpListAdapter extends BaseExpandableListAdapter {
 
     private Context _context;
-    private List<HotoTicketsDate> _listDataHeader; // header titles
-    // child data in format of header title, child title
     private HotoTicketList hotoTicketList;
-    /*import java.util.HashMap;
-    private HashMap<Object, List<HotoTicket>> _listDataChild;
-
-    public UserHotoExpListAdapter(Context context, List<HotoTicketsDate> listDataHeader,
-                                  HashMap<Object, List<HotoTicket>> listChildData) {
-        this._context = context;
-        this._listDataHeader = listDataHeader;
-        this._listDataChild = listChildData;
-    }*/
 
     public UserHotoExpListAdapter(Context _context, HotoTicketList hotoTicketList) {
         this._context = _context;
@@ -40,14 +29,11 @@ public class UserHotoExpListAdapter extends BaseExpandableListAdapter {
     @Override
     public Object getChild(int groupPosition, int childPosititon) {
         return hotoTicketList.getHotoTicketsDates().get(groupPosition).getHotoTickets().get(childPosititon);
-//        return this._listDataChild.get(this._listDataHeader.get(groupPosition))
-//                .get(childPosititon);
     }
 
     @Override
     public long getChildId(int groupPosition, int childPosition) {
         return Long.parseLong(hotoTicketList.getHotoTicketsDates().get(groupPosition).getHotoTickets().get(childPosition).getId());
-//        return childPosition;
     }
 
     @Override
@@ -71,12 +57,12 @@ public class UserHotoExpListAdapter extends BaseExpandableListAdapter {
         textView_SiteID.setText("Site Id: " + HotoTicket.getSiteId());
         textView_SiteName.setText("Site Name: " + HotoTicket.getSiteName());
         textView_SiteAddress.setText("Site Address: " + HotoTicket.getSiteAddress());
-        textView_SiteSSA.setText("Site SSA: " + HotoTicket.getSsaName());
+        textView_SiteSSA.setText("Site SSA/CPA: " + HotoTicket.getSsaName());
 
-        if(HotoTicket.getStatus().equalsIgnoreCase("WIP")){
-            convertView.setBackgroundColor(ContextCompat.getColor(_context,R.color.yellow));
-        }else{
-            convertView.setBackgroundColor(ContextCompat.getColor(_context,R.color.colorWhite));
+        if (HotoTicket.getStatus().equalsIgnoreCase("WIP")) {
+            convertView.setBackgroundColor(ContextCompat.getColor(_context, R.color.yellow));
+        } else {
+            convertView.setBackgroundColor(ContextCompat.getColor(_context, R.color.colorWhite));
         }
         return convertView;
     }
@@ -84,19 +70,16 @@ public class UserHotoExpListAdapter extends BaseExpandableListAdapter {
     @Override
     public int getChildrenCount(int groupPosition) {
         return hotoTicketList.getHotoTicketsDates().get(groupPosition).getHotoTickets().size();
-//        return this._listDataChild.get(this._listDataHeader.get(groupPosition)).size();
     }
 
     @Override
     public Object getGroup(int groupPosition) {
         return hotoTicketList.getHotoTicketsDates().get(groupPosition);
-//        return this._listDataHeader.get(groupPosition);
     }
 
     @Override
     public int getGroupCount() {
         return hotoTicketList.getHotoTicketsDates().size();
-//        return this._listDataHeader.size();
     }
 
     @Override
@@ -120,7 +103,7 @@ public class UserHotoExpListAdapter extends BaseExpandableListAdapter {
         textView_Date.setTypeface(null, Typeface.BOLD);
 
         textView_Count.setTypeface(null, Typeface.BOLD);
-        textView_Count.setText(""+HotoTicketsDate.getHotoTicketCount());
+        textView_Count.setText("" + HotoTicketsDate.getHotoTicketCount());
 
         return convertView;
     }
