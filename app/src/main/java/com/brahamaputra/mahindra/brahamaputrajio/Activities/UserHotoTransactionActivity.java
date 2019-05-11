@@ -123,30 +123,9 @@ public class UserHotoTransactionActivity extends BaseActivity {
             getOfflineData();
 
             gpsTracker = new GPSTracker(UserHotoTransactionActivity.this);
-        /*Log.e(UserHotoTransactionActivity.class.getName(), "Lat : " + gpsTracker.getLatitude() + "\n Long : " + gpsTracker.getLongitude());
-        if (gpsTracker.canGetLocation()) {
-            //showToast("Lat : "+gpsTracker.getLatitude()+"\n Long : "+gpsTracker.getLongitude()); comment By 008 on 10-11-2018
-            Log.e(UserHotoTransactionActivity.class.getName(), "Lat : " + gpsTracker.getLatitude() + "\n Long : " + gpsTracker.getLongitude());
-        } else {
-            showToast("Could not detect location");
-            finish();
-        }*/
-            //mUserHotoTransButtonSubmitHotoTrans.setAllCaps(false);
             mUserHotoTransButtonSubmitHotoTrans.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
-                /*if (gpsTracker.getLongitude() > 0 && gpsTracker.getLongitude() > 0) {
-                    checkInLat = String.valueOf(gpsTracker.getLatitude());
-                    checkInLong = String.valueOf(gpsTracker.getLongitude());*/
-
-                /*Commented by 008 24112018
-                startActivityForResult(new Intent(UserHotoTransactionActivity.this, HotoSectionsListActivity.class), RESULT_HOTO_READING);*/
-
-                /*} else {
-                    showToast("Could not detecting location.");
-                }*/
-
                     submitDetails();
                     Constants.hototicket_Selected_SiteType = mUserHotoTransEditTextTypeOfSites.getText().toString();
                     Constants.hototicket_Selected_CustomerName = mUserHotoTransEditTextCustomerName.getText().toString();
@@ -210,14 +189,7 @@ public class UserHotoTransactionActivity extends BaseActivity {
             mUserHotoTransEditTextSiteAddress.setText(intent.getStringExtra("siteAddress"));
             mUserHotoTransEditTextTypeOfSites.setText(intent.getStringExtra("siteType"));
 
-            /*if (gpsTracker.getLongitude() > 0 && gpsTracker.getLongitude() > 0) {
-                checkInLat = String.valueOf(gpsTracker.getLatitude());
-                checkInLong = String.valueOf(gpsTracker.getLongitude());*/
-
             submitCheckIn(checkInLong, checkInLat, checkInBatteryData);
-            /*} else {
-                showToast("Could not detecting location.");
-            }*/
         }
     }
 
@@ -303,7 +275,6 @@ public class UserHotoTransactionActivity extends BaseActivity {
         mUserHotoTransSpinnerSourceOfPowerVal = (TextView) findViewById(R.id.userHotoTrans_textView_sourceOfPower_val);
         mUserHotoTransButtonSubmitHotoTrans = (Button) findViewById(R.id.userHotoTrans_button_submitHotoTrans);
 
-        //mUserHotoTransSpinnerSourceOfPower.setTitle("Source of Power");
     }
 
 
@@ -331,10 +302,7 @@ public class UserHotoTransactionActivity extends BaseActivity {
                 return true;
 
             case R.id.menuSubmit:
-                //submitHotoTicket(); Comment by 008 on 10-11-2018
-                //sessionManager.updateSessionUserTicketId(null);
-                //sessionManager.updateSessionUserTicketName(null);
-                //finish();
+
                 LocationManager lm = (LocationManager) UserHotoTransactionActivity.this.getSystemService(Context.LOCATION_SERVICE);
                 boolean gps_enabled = false;
                 boolean network_enabled = false;
@@ -360,18 +328,15 @@ public class UserHotoTransactionActivity extends BaseActivity {
                         checkOutLat = String.valueOf(gpsTracker.getLatitude());
                         checkOutLong = String.valueOf(gpsTracker.getLongitude());
 
-                        //submitDetails();
                         CheckSubmitFlagOfAllHotoForms();//24112018 by 008
-                        //showSettingsAlert();
+
 
                     } else {
-                        //showToast("Could not detecting location.");
                         alertDialogManager = new AlertDialogManager(UserHotoTransactionActivity.this);
                         alertDialogManager.Dialog("Information", "Could not get your location. Please try again.", "ok", "cancel", new AlertDialogManager.onSingleButtonClickListner() {
                             @Override
                             public void onPositiveClick() {
                                 if (gpsTracker.canGetLocation()) {
-                                    //showToast("Lat : "+gpsTracker.getLatitude()+"\n Long : "+gpsTracker.getLongitude()); comment By 008 on 10-11-2018
                                     Log.e(UserHotoTransactionActivity.class.getName(), "Lat : " + gpsTracker.getLatitude() + "\n Long : " + gpsTracker.getLongitude());
                                 }
                             }
@@ -451,7 +416,6 @@ public class UserHotoTransactionActivity extends BaseActivity {
         try {
             if (offlineStorageWrapper.checkOfflineFileIsAvailable(GlobalMethods.replaceAllSpecialCharAtUnderscore(ticketName) + ".txt")) {
                 String jsonInString = (String) offlineStorageWrapper.getObjectFromFile(GlobalMethods.replaceAllSpecialCharAtUnderscore(ticketName) + ".txt");
-                // Toast.makeText(Land_Details.this,"JsonInString :"+ jsonInString,Toast.LENGTH_SHORT).show();
 
                 Gson gson = new Gson();
                 hotoTransactionData = gson.fromJson(jsonInString, HotoTransactionData.class);
@@ -464,7 +428,6 @@ public class UserHotoTransactionActivity extends BaseActivity {
                 }
 
             } else {
-//                Toast.makeText(UserHotoTransactionActivity.this, "No offline data available", Toast.LENGTH_SHORT).show();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -493,49 +456,6 @@ public class UserHotoTransactionActivity extends BaseActivity {
             hotoTransactionData.setSiteAddress(mUserHotoTransEditTextSiteAddress.getText().toString());
 
             hotoTransactionData.setSourceOfPower(mUserHotoTransSpinnerSourceOfPowerVal.getText().toString());
-
-
-//           hotoTransactionData.setLandDetailsData(new LandDetailsData());
-//
-//            hotoTransactionData.setTowerDetailsData(new TowerDetailsData());
-//
-//            hotoTransactionData.setEarthResistanceTowerData(new EarthResistanceTowerData());
-//
-//            hotoTransactionData.setEarthResistanceEquipmentData(new EarthResistanceEquipmentData());
-//
-//            hotoTransactionData.setElectricConnectionData(new ElectricConnectionData());
-//
-//            hotoTransactionData.setAirConditionersData(new AirConditionersData());
-//
-//            hotoTransactionData.setSolarPowerSystemData(new SolarPowerSystemData());
-//
-//            hotoTransactionData.setPowerPlantDetailsData(new PowerPlantDetailsData());
-//
-//            hotoTransactionData.setPowerBackupsDGData(new PowerBackupsDGData());
-//
-//            hotoTransactionData.setPowerManagementSystemData(new PowerManagementSystemData());
-//
-//            hotoTransactionData.setShelterData(new ShelterData());
-//
-//            hotoTransactionData.setMediaData(new MediaData());
-//
-//            hotoTransactionData.setBatterySetData(new BatterySetData());
-//
-//            hotoTransactionData.setExternalTenantsPersonalDetailsData(new ExternalTenantsPersonalDetailsData());
-//
-//            hotoTransactionData.setTotalDCLoadofSiteData(new TotalDCLoadofSiteData());
-//
-//            hotoTransactionData.setActiveequipmentDetailsData(new ActiveequipmentDetailsData());
-//
-//            hotoTransactionData.setGeneralSafetyMeasuresData(new GeneralSafetyMeasuresData());
-//
-//            hotoTransactionData.setAcdb_dcdb_data(new ACDB_DCDB_Data());
-//
-//            hotoTransactionData.setServoStabilizerData(new ServoStabilizerData());
-//
-//            hotoTransactionData.setDetailsOfUnusedMaterialsData(new DetailsOfUnusedMaterialsData());
-//
-//            hotoTransactionData.setSitePhotoCaptureData(new SitePhotoCaptureData());
 
             Gson gson2 = new GsonBuilder().create();
             String jsonString = gson2.toJson(hotoTransactionData);
@@ -620,39 +540,6 @@ public class UserHotoTransactionActivity extends BaseActivity {
 
                 hotoTransactionData = gson.fromJson(jsonInString, HotoTransactionData.class);
                 electricConnectionData = hotoTransactionData.getElectricConnectionData();
-
-                /*String electricConnectionType = electricConnectionData.getElectricConnectionType();
-                String connectionTariff = electricConnectionData.getConnectionTariff();
-                String sanctionLoad = electricConnectionData.getSanctionLoad();
-                String existingLoadAtSite = electricConnectionData.getExistingLoadAtSite();
-                String nameSupplyCompany = electricConnectionData.getNameSupplyCompany();
-                String electricBillCopyStatus = electricConnectionData.getElectricBillCopyStatus();
-                String noOfCompoundLights = electricConnectionData.getNoOfCompoundLights();
-                String meterReadingsEB = "";
-                String supplierEB = "";
-                String costPerUnitForSharedConnectionEB = "";
-                String statusEB = "";
-                String transformerWorkingCondition = "";
-                String transformerCapacity = "";
-                String meterBoxStatusEB = "";
-                String sectionName = "";
-                String sectionNo = "";
-                String consumerNo = "";
-                String meterWorkingStatusEB = "";
-                String meterSerialNumberEB = "";
-                String paymentType = "";
-                String paymentScheduleEB = "";
-                String safetyFuseUnit = "";
-                String kitKatFuseStatus = "";
-                String ebNeutralEarthing = "";
-                String averageEbAvailability = "";
-                String scheduledPowerCut = "";
-                String ebBillDate = "";
-                String sapVendorCode = "";
-                String typeModeOfPayment_Val = electricConnectionData.getTypeModeOfPayment_Val();
-                String bankIfscCode = electricConnectionData.getBankIfscCode();
-                String bankAccountNo = electricConnectionData.getBankAccountNo();*/
-
 
                 String electricConnectionType = "";
                 String connectionTariff = "";

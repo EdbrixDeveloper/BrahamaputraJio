@@ -38,9 +38,6 @@ import java.text.DecimalFormat;
 
 public class UsersHotoListActivity extends BaseActivity {
 
-    //import UserHotoListAdapter;
-    //private UserHotoListAdapter mAdapter;
-
     private ProgressWheel wheelprogress;
     private TextView userHotoList_textView_openTickets;
     private TextView userHotoList_textView_allTickets;
@@ -79,7 +76,6 @@ public class UsersHotoListActivity extends BaseActivity {
         sessionManager = new SessionManager(UsersHotoListActivity.this);
         gpsTracker = new GPSTracker(UsersHotoListActivity.this);
         if (gpsTracker.canGetLocation()) {
-            //showToast("Lat : "+gpsTracker.getLatitude()+"\n Long : "+gpsTracker.getLongitude()); comment By 008 on 10-11-2018
             Log.e(UserHotoTransactionActivity.class.getName(), "Lat : " + gpsTracker.getLatitude() + "\n Long : " + gpsTracker.getLongitude());
         }
 
@@ -141,7 +137,6 @@ public class UsersHotoListActivity extends BaseActivity {
                             if (hotoTickStatus.equals("Open") || hotoTickStatus.equals("WIP") || hotoTickStatus.equals("Reassigned")) {
                                 if (hotoTickStatus.equals("Open")) {
 
-                                    //alertDialogManager = new AlertDialogManager(UserHotoTransactionActivity.this);
                                     alertDialogManager.Dialog("Information", "Do you want to proceed.", "Yes", "No", new AlertDialogManager.onTwoButtonClickListner() {
                                         @Override
                                         public void onPositiveClick() {
@@ -155,13 +150,6 @@ public class UsersHotoListActivity extends BaseActivity {
                                         }
                                     }).show();
 
-                                    /*alertDialogManager.Dialog("Information", "Do you want to proceed.", "ok", "cancel", new AlertDialogManager.onSingleButtonClickListner() {
-                                        @Override
-                                        public void onPositiveClick() {
-                                            checkSystemLocation(hotoTicketNo, hotoTicketId, hotoTicketDate, siteId, siteName, siteAddress, status, siteType,
-                                                    stateName, customerName, circleName, ssaName);
-                                        }
-                                    }).show();*/
                                 } else {
                                     checkSystemLocation(hotoTicketNo, hotoTicketId, hotoTicketDate, siteId, siteName, siteAddress, status, siteType,
                                             stateName, customerName, circleName, ssaName);
@@ -171,12 +159,10 @@ public class UsersHotoListActivity extends BaseActivity {
                         }
 
                     } else {
-                        //showToast("Could not detecting location. Please try again later.");
                         alertDialogManager.Dialog("Information", "Could not get your location. Please try again.", "ok", "cancel", new AlertDialogManager.onSingleButtonClickListner() {
                             @Override
                             public void onPositiveClick() {
                                 if (gpsTracker.canGetLocation()) {
-                                    //showToast("Lat : "+gpsTracker.getLatitude()+"\n Long : "+gpsTracker.getLongitude()); comment By 008 on 10-11-2018
                                     Log.e(UserHotoTransactionActivity.class.getName(), "Lat : " + gpsTracker.getLatitude() + "\n Long : " + gpsTracker.getLongitude());
                                 }
                             }
@@ -184,26 +170,6 @@ public class UsersHotoListActivity extends BaseActivity {
                     }
                 }
 
-               /* String hotoTicketId = HotoTicketMap.get(HotoTicketsDates.get(groupPosition)).get(childPosition).getId().toString();
-                String hotoTicketNo = HotoTicketMap.get(HotoTicketsDates.get(groupPosition)).get(childPosition).getHotoTicketNo().toString();
-
-                String hotoTicketDate = HotoTicketMap.get(HotoTicketsDates.get(groupPosition)).get(childPosition).getHotoTicketDate().toString();
-                String siteId = HotoTicketMap.get(HotoTicketsDates.get(groupPosition)).get(childPosition).getSiteId().toString();
-                String siteName = HotoTicketMap.get(HotoTicketsDates.get(groupPosition)).get(childPosition).getSiteName().toString();
-                String siteAddress = HotoTicketMap.get(HotoTicketsDates.get(groupPosition)).get(childPosition).getSiteAddress().toString();
-                String status = HotoTicketMap.get(HotoTicketsDates.get(groupPosition)).get(childPosition).getStatus().toString();
-                String siteType = HotoTicketMap.get(HotoTicketsDates.get(groupPosition)).get(childPosition).getSiteType().toString();
-                String stateName = HotoTicketMap.get(HotoTicketsDates.get(groupPosition)).get(childPosition).getStateName().toString();
-                String customerName = HotoTicketMap.get(HotoTicketsDates.get(groupPosition)).get(childPosition).getCustomerName().toString();
-                String circleName = HotoTicketMap.get(HotoTicketsDates.get(groupPosition)).get(childPosition).getCircleName().toString();
-                String ssaName = HotoTicketMap.get(HotoTicketsDates.get(groupPosition)).get(childPosition).getSsaName().toString();
-
-
-                String hotoTickStatus = HotoTicketMap.get(HotoTicketsDates.get(groupPosition)).get(childPosition).getStatus().toString();
-                if(hotoTickStatus.equals("Open")){
-                    checkSystemLocation(hotoTicketNo,hotoTicketId,hotoTicketDate,siteId,siteName,siteAddress,status,siteType,
-                            stateName,customerName,circleName,ssaName);
-                }*/
                 return false;
             }
         });
@@ -239,7 +205,7 @@ public class UsersHotoListActivity extends BaseActivity {
                                         double per = 0.0;
                                         double circlePer = 0.0;
                                         int roundPer = 0;
-                                        per = hotoTicketList.getHotoTicketSummary().getPercentage();//hotoTicketList.getHotoTicketSummary().getPercentage() == null ? 0.0 :
+                                        per = hotoTicketList.getHotoTicketSummary().getPercentage();
                                         circlePer = (3.6) * Double.valueOf(per);
                                         roundPer = (int) Math.round(circlePer);
 
@@ -249,8 +215,6 @@ public class UsersHotoListActivity extends BaseActivity {
 
 
                                         wheelprogress.setPercentage(roundPer);
-                                        //wheelprogress.setPercentage(hotoTicketList.getHotoTicketSummary().getPercentage() == null ? 0 : hotoTicketList.getHotoTicketSummary().getPercentage());
-                                        //wheelprogress.setStepCountText(hotoTicketList.getHotoTicketSummary().getPercentage().toString() == null ? "0" : hotoTicketList.getHotoTicketSummary().getPercentage().toString());
                                         wheelprogress.setStepCountText(String.valueOf(per));
                                     }
                                     if (hotoTicketList.getHotoTicketsDates() != null && hotoTicketList.getHotoTicketsDates().size() > 0) {
@@ -266,43 +230,6 @@ public class UsersHotoListActivity extends BaseActivity {
                                         txtNoTicketFound.setVisibility(View.VISIBLE);
                                     }
 
-
-                                /*HotoTicketsDates = new ArrayList<>();
-                                HotoTicketMap = new HashMap<Object, List<HotoTicket>>();
-                                //showToast(""+response.getHotoTicketsDates().size());
-                                for(int i=0;i<response.getHotoTicketsDates().size();i++) {
-
-                                    List<HotoTicket> header = new ArrayList<HotoTicket>();
-                                    for(int j =0;j<response.getHotoTicketsDates().get(i).getHotoTickets().size();j++) {
-                                        header.add(new HotoTicket(response.getHotoTicketsDates().get(i).getHotoTickets().get(i).getId(),
-                                                response.getHotoTicketsDates().get(i).getHotoTickets().get(i).getHotoTicketNo(),
-                                                response.getHotoTicketsDates().get(i).getHotoTickets().get(i).getHotoTicketDate(),
-                                                response.getHotoTicketsDates().get(i).getHotoTickets().get(i).getSiteId(),
-                                                response.getHotoTicketsDates().get(i).getHotoTickets().get(i).getSiteName(),
-                                                response.getHotoTicketsDates().get(i).getHotoTickets().get(i).getSiteAddress(),
-                                                response.getHotoTicketsDates().get(i).getHotoTickets().get(i).getStatus(),
-
-                                                response.getHotoTicketsDates().get(i).getHotoTickets().get(i).getSiteType(),
-                                                response.getHotoTicketsDates().get(i).getHotoTickets().get(i).getStateName(),
-                                                response.getHotoTicketsDates().get(i).getHotoTickets().get(i).getCustomerName(),
-                                                response.getHotoTicketsDates().get(i).getHotoTickets().get(i).getCircleName(),
-                                                response.getHotoTicketsDates().get(i).getHotoTickets().get(i).getSsaName()
-                                                ));
-                                    }
-                                    //HotoTicketsDates.add(new HotoTicketsDate("26 Oct 2018", ""+header.size()));
-
-                                    HotoTicketsDates.add(new HotoTicketsDate(response.getHotoTicketsDates().get(i).getDate(),
-                                            Integer.parseInt(response.getHotoTicketsDates().get(i).getHotoTicketCount().toString()),
-                                            response.getHotoTicketsDates().get(i).getHotoTickets() ));
-
-                                    HotoTicketMap.put(HotoTicketsDates.get(i), header);
-                                }
-                                userHotoExpListAdapter = new UserHotoExpListAdapter(UsersHotoListActivity.this,HotoTicketsDates,HotoTicketMap);
-                                userHotoList_listView_hotoList.setAdapter(userHotoExpListAdapter);
-
-                                for(int i=0; i<response.getHotoTicketsDates().size();i++){
-                                    userHotoList_listView_hotoList.expandGroup(i);
-                                }*/
                                 }
                             }
                         }
@@ -378,8 +305,6 @@ public class UsersHotoListActivity extends BaseActivity {
             }).show();
         } else {
             if (Conditions.isNetworkConnected(UsersHotoListActivity.this)) {
-                //if (gpsTracker.getLongitude()>0 && gpsTracker.getLongitude()>0){
-
                 Intent intent = new Intent(UsersHotoListActivity.this, UserHotoTransactionActivity.class);
                 intent.putExtra("isNetworkConnected", Conditions.isNetworkConnected(UsersHotoListActivity.this));
                 intent.putExtra("Id", hotoTicketId);
@@ -402,11 +327,6 @@ public class UsersHotoListActivity extends BaseActivity {
                 sessionManager.updateSessionUserTicketId(hotoTicketId);
                 sessionManager.updateSessionUserTicketName(hotoTickitNo);
                 startActivityForResult(intent, RESULT_HOTO_SUBMIT);
-
-                //}else{
-                //    showToast("Sorry could not detect location");
-                //    finish();
-                //}
 
             } else {
                 alertDialogManager.Dialog("Information", "Device has no internet connection. Do you want to use offline mode?", "ok", "cancel", new AlertDialogManager.onSingleButtonClickListner() {
