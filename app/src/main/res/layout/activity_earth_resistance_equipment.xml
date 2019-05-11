@@ -48,6 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/app_min_padding"
+                android:visibility="gone"
                 android:weightSum="1">
 
                 <TextView
@@ -57,7 +58,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
                     android:text="Earth Resistance(Ohms)*"
-                    android:textColor="@color/colorBlueLink"/>
+                    android:textColor="@color/colorBlueLink" />
 
                 <EditText
                     android:id="@+id/earthResistanceEquipment_editText_earthResistance"
@@ -76,6 +77,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/app_min_padding"
+                android:visibility="gone"
                 android:weightSum="1">
 
                 <TextView
