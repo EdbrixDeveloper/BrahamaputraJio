@@ -31,7 +31,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
                     android:text="Tower*"
-                    android:textColor="@color/colorBlueLink"/>
+                    android:textColor="@color/colorBlueLink" />
 
                 <TextView
                     android:id="@+id/towerDetail_textView_tower_val"
@@ -58,7 +58,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
                     android:text="Type of tower*"
-                    android:textColor="@color/colorBlueLink"/>
+                    android:textColor="@color/colorBlueLink" />
 
 
                 <TextView
@@ -76,6 +76,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/app_min_padding"
+                android:visibility="gone"
                 android:weightSum="1">
 
                 <TextView
@@ -84,7 +85,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
                     android:text="Book Value of the Tower, Rs"
-                    android:textColor="@color/colorBlueLink"/>
+                    android:textColor="@color/colorBlueLink" />
 
                 <EditText
                     android:id="@+id/towerDetail_editText_BookValueOfTheTower"
@@ -111,7 +112,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
                     android:text="Height of the tower(In Mtr)"
-                    android:textColor="@color/colorBlueLink"/>
+                    android:textColor="@color/colorBlueLink" />
 
                 <EditText
                     android:id="@+id/towerDetail_editText_heightOfTower"
@@ -130,6 +131,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/app_min_padding"
+                android:visibility="gone"
                 android:weightSum="1">
 
                 <TextView
@@ -140,7 +142,7 @@
                     android:layout_weight="0.4"
                     android:singleLine="false"
                     android:text="Date of painting of the Tower*"
-                    android:textColor="@color/colorBlueLink"/>
+                    android:textColor="@color/colorBlueLink" />
 
                 <EditText
                     android:id="@+id/towerDetail_editText_dateOfPaintingOfTheTower"
@@ -250,7 +252,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
                     android:text="Sign Board"
-                    android:textColor="@color/colorBlueLink"/>
+                    android:textColor="@color/colorBlueLink" />
 
                 <TextView
                     android:id="@+id/towerDetail_textView_signboard_val"
