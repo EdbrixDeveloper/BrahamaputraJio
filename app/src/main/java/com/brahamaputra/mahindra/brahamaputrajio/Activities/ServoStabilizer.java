@@ -381,10 +381,10 @@ public class ServoStabilizer extends BaseActivity {
         if (servoStabilizerWorkingStatus.isEmpty() || servoStabilizerWorkingStatus == null) {
             showToast("Select Servo Stabilizer Working Status");
             return false;
-        } else if ((qRCodeScan.isEmpty() || qRCodeScan == null) && !servoStabilizerWorkingStatus.equals("Not Available")) {
+        } /*else if ((qRCodeScan.isEmpty() || qRCodeScan == null) && !servoStabilizerWorkingStatus.equals("Not Available")) {
             showToast("Please Scan QR Code");
             return false;
-        } else return true;
+        }*/ else return true;
     }
 
     public static Boolean getFromPref(Context context, String key) {

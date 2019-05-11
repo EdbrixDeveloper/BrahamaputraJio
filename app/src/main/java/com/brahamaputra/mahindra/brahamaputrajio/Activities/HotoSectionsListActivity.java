@@ -196,46 +196,36 @@ public class HotoSectionsListActivity extends BaseActivity {
     public int checkIsSubmited(Integer SecNo) {
         switch (SecNo) {
             case 0:
-                return hotoTransactionData.getLandDetailsData().getSubmited();
-            case 1:
                 return hotoTransactionData.getTowerDetailsData().getSubmited();
-            case 2:
+            case 1:
                 return hotoTransactionData.getEarthResistanceTowerData().getSubmited();
-            case 3:
+            case 2:
                 return hotoTransactionData.getEarthResistanceEquipmentData().getSubmited();
-            case 4:
+            case 3:
                 return hotoTransactionData.getElectricConnectionData().getSubmited();
-            case 5:
+            case 4:
                 return hotoTransactionData.getAirConditionParentData().getSubmited();
-            case 6:
-                return hotoTransactionData.getSolarPowerSystemData().getSubmited();
-            case 7:
+            case 5:
                 return hotoTransactionData.getPowerPlantDetailsParentData().getSubmited();
-            case 8:
+            case 6:
                 return hotoTransactionData.getPowerBackupsDGParentData().getSubmited();
-            case 9:
+            case 7:
                 return hotoTransactionData.getShelterData().getSubmited();
-            case 10:
-                return hotoTransactionData.getMediaData().getSubmited();
-            case 11:
+            case 8:
                 return hotoTransactionData.getBatterySetParentData().getSubmited();
-            case 12:
+            case 9:
                 return hotoTransactionData.getExternalTenantsPersonalDetailsParentData().getSubmited();
-            case 13:
+            case 10:
                 return hotoTransactionData.getTotalDCLoadofSiteData().getSubmited();
-            case 14:
-                return hotoTransactionData.getActiveequipmentDetailsData().getSubmited();
-            case 15:
+            case 11:
                 return hotoTransactionData.getPowerManagementSystemData().getSubmited();
-            case 16:
+            case 12:
                 return hotoTransactionData.getGeneralSafetyMeasuresParentData().getSubmited();
-            case 17:
+            case 13:
                 return hotoTransactionData.getAcdb_dcdb_data().getSubmited();
-            case 18:
+            case 14:
                 return hotoTransactionData.getServoStabilizerData().getSubmited();
-            case 19:
-                return hotoTransactionData.getDetailsOfUnusedMaterialsParentData().getSubmited();
-            case 20:
+            case 15:
                 return hotoTransactionData.getSitePhotoCaptureData().getSubmited();
 
         }
