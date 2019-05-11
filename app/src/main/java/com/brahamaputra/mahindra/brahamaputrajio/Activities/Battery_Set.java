@@ -623,13 +623,7 @@ public class Battery_Set extends BaseActivity {
         String backupCondition = mBatterySetTextViewBACKUPConditionVal.getText().toString().trim();
         String natureOfProblem = mBatterySetEditTextNatureofProblem.getText().toString().trim();
 
-        if (batterySet_Qr.isEmpty() || batterySet_Qr == null) {
-            showToast("Please Scan QR Code");
-            return false;
-        } else if (assetOwner.isEmpty() || assetOwner == null) {
-            showToast("Select Asset Owner ");
-            return false;
-        } else if (manufactureMakeModel.isEmpty() || manufactureMakeModel == null) {
+        if (manufactureMakeModel.isEmpty() || manufactureMakeModel == null) {
             showToast("Select Manufacture/Make/Model");
             return false;
         } else if (capacityInAH.isEmpty() || capacityInAH == null) {
@@ -659,9 +653,7 @@ public class Battery_Set extends BaseActivity {
         } else if (natureOfProblem.isEmpty() || natureOfProblem == null) {
             showToast("Select Nature of Problem ");
             return false;
-        }/* else if (checkDuplicationQrCode(currentPos)) {
-            return false;
-        }*/ else return true;
+        }else return true;
 
 
     }
@@ -741,20 +733,6 @@ public class Battery_Set extends BaseActivity {
     }
 
     private boolean checkValidation(String noOfBatterySet, String noOfBatteryBankWorking, String methodFlag) {
-        //String noOfBatterySet = mBatterySetTextViewNoofBatterySetProvidedVal.getText().toString().trim();
-        //String noOfBatteryBankWorking = mBatterySetTextViewNumberofBatteryBankWorkingVal.getText().toString().trim();
-
-        /*if (noOfBatterySet.isEmpty() || noOfBatterySet == null) {
-            showToast("Select No of Battery Set Provided ");
-            return false;
-        } else if (noOfBatteryBankWorking.isEmpty() || noOfBatteryBankWorking == null) {
-            showToast("Select No of Battery Bank Working ");
-            return false;
-        } else if (Integer.valueOf(noOfBatteryBankWorking) > Integer.valueOf(noOfBatterySet)) {
-            showToast("Number of battery bank working  is not more than number of battery set provided ");
-            return false;
-        } else return true;*/
-
 
         if (noOfBatterySet.isEmpty() || noOfBatterySet == null) {
             showToast("Select No of Battery Set Provided ");
@@ -772,22 +750,6 @@ public class Battery_Set extends BaseActivity {
             } else return true;
         } else return true;
     }
-
-    /*private boolean checkValidation() {
-        String noOfBatterySet = mBatterySetTextViewNoofBatterySetProvidedVal.getText().toString().trim();
-        String noOfBatteryBankWorking = mBatterySetTextViewNumberofBatteryBankWorkingVal.getText().toString().trim();
-
-        if (noOfBatterySet.isEmpty() || noOfBatterySet == null) {
-            showToast("Select No of Battery Set Provided ");
-            return false;
-        } else if (noOfBatteryBankWorking.isEmpty() || noOfBatteryBankWorking == null) {
-            showToast("Select No of Battery Bank Working ");
-            return false;
-        } else if (Integer.valueOf(noOfBatteryBankWorking) > Integer.valueOf(noOfBatterySet)) {
-            showToast("Number of battery bank working  is not more than number of battery set provided ");
-            return false;
-        } else return true;
-    }*/
 
 
     public static Boolean getFromPref(Context context, String key) {
