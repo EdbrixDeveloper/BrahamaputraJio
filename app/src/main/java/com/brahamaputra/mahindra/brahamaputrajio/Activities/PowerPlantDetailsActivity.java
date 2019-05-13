@@ -649,13 +649,13 @@ public class PowerPlantDetailsActivity extends BaseActivity {
                         savePlantRecords(currentPos);
                         //if (checkValidationOnNoOfPowerPlant() == true) {
                         /*if (checkDuplicationQrCode() == false) {*/
-                            if (checkValidationOnChangeNoOfPowerPlant(mPowerPlantDetailsTextViewNumberOfPowerPlantVal.getText().toString().trim(), mPowerPlantDetailsTextViewNumberOfPowerPlantWorkingVal.getText().toString().trim(), "onSubmit") == true) {
-                                //Save Final current reading and submit all  data
-                                //savePlantRecords(currentPos);
-                                submitDetails();
-                                startActivity(new Intent(PowerPlantDetailsActivity.this, Power_Backups_DG.class));
-                                finish();
-                            }
+                        if (checkValidationOnChangeNoOfPowerPlant(mPowerPlantDetailsTextViewNumberOfPowerPlantVal.getText().toString().trim(), mPowerPlantDetailsTextViewNumberOfPowerPlantWorkingVal.getText().toString().trim(), "onSubmit") == true) {
+                            //Save Final current reading and submit all  data
+                            //savePlantRecords(currentPos);
+                            submitDetails();
+                            startActivity(new Intent(PowerPlantDetailsActivity.this, Power_Backups_DG.class));
+                            finish();
+                        }
                         /*}*/
                     }
                 }
@@ -981,9 +981,9 @@ public class PowerPlantDetailsActivity extends BaseActivity {
         String numberOfPowerPlant = mPowerPlantDetailsTextViewNumberOfPowerPlantVal.getText().toString().trim();
         String qRCodeScan = base64StringQRCodeScan;
         String numberOfModules = mPowerPlantDetailsTextViewNumberOfModulesVal.getText().toString().trim();
-        /*String assetOwner = mPowerPlantDetailsTextViewAssetOwnerVal.getText().toString().trim();
+        /*String assetOwner = mPowerPlantDetailsTextViewAssetOwnerVal.getText().toString().trim();*/
         String manufacturerMakeModel = mPowerPlantDetailsTextViewManufacturerMakeModelVal.getText().toString().trim();
-        String powerPlantModel = mPowerPlantDetailsEditTextPowerPlantModel.getText().toString().trim();
+        /*String powerPlantModel = mPowerPlantDetailsEditTextPowerPlantModel.getText().toString().trim();
         String numberModuleSlots = mPowerPlantDetailsTextViewNumberModuleSlotsVal.getText().toString().trim();
         String earthingStatus = mPowerPlantDetailsTextViewPowerPlantEarthingStatusVal.getText().toString().trim();
         String dcLoadInDisplay = mPowerPlantDetailsEditTextDcLoadInDisplayAmp.getText().toString().trim();
@@ -1014,10 +1014,11 @@ public class PowerPlantDetailsActivity extends BaseActivity {
         /*else if (assetOwner.isEmpty() || assetOwner == null) {
             showToast("Select Asset Owner");
             return false;
-        } else if (manufacturerMakeModel.isEmpty() || manufacturerMakeModel == null) {
+        }*/
+        else if (manufacturerMakeModel.isEmpty() || manufacturerMakeModel == null) {
             showToast("Select Manufacturer/Make");
             return false;
-        }*//* else if (powerPlantModel.isEmpty() || powerPlantModel == null) {
+        }/* else if (powerPlantModel.isEmpty() || powerPlantModel == null) {
             showToast("Enter Power Plant Model"); comment by 008 no imp powerPlantModel
             return false;
         }*//* else if (numberModuleSlots.isEmpty() || numberModuleSlots == null) {
@@ -1061,8 +1062,7 @@ public class PowerPlantDetailsActivity extends BaseActivity {
             return false;
         }*/ /*else if (checkDuplicationQrCode(currentPos)) {
             return false;
-        } 04022019 by 008 for new purpose*/
-        else return true;/*if (checkValidationOnNoOfModuleSlots() == false) {
+        } 04022019 by 008 for new purpose*/ else return true;/*if (checkValidationOnNoOfModuleSlots() == false) {
             return false;
         } else return checkValidationOnNoOfFaultyModulese();*/
 
