@@ -542,7 +542,7 @@ public class Battery_Set extends BaseActivity {
         batterySet_button_nextReading.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*if (checkValidtionForArrayFields()) { comment 04022019 by tiger*/
+                if (checkValidtionForArrayFields()) { //comment 04022019 by tiger
                 if (currentPos < (totalCount - 1)) {
                     //Save current ac reading
                     saveRecords(currentPos);
@@ -565,7 +565,7 @@ public class Battery_Set extends BaseActivity {
                         }
                     /*}*/
                 }
-                /*}*/
+                }
             }
         });
         batterySet_button_previousReading.setOnClickListener(new View.OnClickListener() {
@@ -610,10 +610,10 @@ public class Battery_Set extends BaseActivity {
     }
 
     private boolean checkValidtionForArrayFields() {
-        String batterySet_Qr = base64StringBatterySet;
-        String assetOwner = mBatterySetTextViewAssetOwnerVal.getText().toString().trim();
+        /*String batterySet_Qr = base64StringBatterySet;
+        String assetOwner = mBatterySetTextViewAssetOwnerVal.getText().toString().trim();*/
         String manufactureMakeModel = mBatterySetTextViewManufacturerMakeModelVal.getText().toString().trim();
-        String capacityInAH = mBatterySetTextViewCapacityinAHVal.getText().toString().trim();
+        /*String capacityInAH = mBatterySetTextViewCapacityinAHVal.getText().toString().trim();
         String typeOfBattery = mBatterySetTextViewTypeofBatteryVal.getText().toString().trim();
         String dateOfInstallation = mBatterySetEditTextDateofInstallation.getText().toString().trim();
         String backupDuaration = mBatterySetEditTextBackupduration.getText().toString().trim();
@@ -621,12 +621,12 @@ public class Battery_Set extends BaseActivity {
         String batteryBankCableSize = mBatterySetTextViewBatteryBankCableSizeinSQMMVal.getText().toString().trim();
         String batteryBankEarthingStatus = mBatterySetTextViewBatteryBankEarthingStatusVal.getText().toString().trim();
         String backupCondition = mBatterySetTextViewBACKUPConditionVal.getText().toString().trim();
-        String natureOfProblem = mBatterySetEditTextNatureofProblem.getText().toString().trim();
+        String natureOfProblem = mBatterySetEditTextNatureofProblem.getText().toString().trim();*/
 
         if (manufactureMakeModel.isEmpty() || manufactureMakeModel == null) {
             showToast("Select Manufacture/Make/Model");
             return false;
-        } else if (capacityInAH.isEmpty() || capacityInAH == null) {
+        } /*else if (capacityInAH.isEmpty() || capacityInAH == null) {
             showToast("Select Capacity in AH ");
             return false;
         } else if (typeOfBattery.isEmpty() || typeOfBattery == null) {
@@ -653,7 +653,7 @@ public class Battery_Set extends BaseActivity {
         } else if (natureOfProblem.isEmpty() || natureOfProblem == null) {
             showToast("Select Nature of Problem ");
             return false;
-        }else return true;
+        }*/else return true;
 
 
     }

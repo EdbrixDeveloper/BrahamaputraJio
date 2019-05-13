@@ -361,16 +361,16 @@ public class ExternalTenantsPersonaldetails extends BaseActivity {
         String positionattheTower = mExternalTenantsPersonaldetailsEditTextPositionattheTower.getText().toString().trim();
 
 
-        if (nameofTenant.isEmpty() && nameofTenant == null) {
+        if (nameofTenant.isEmpty() || nameofTenant == null) {
             showToast("Select Name of the Tenant");
             return false;
-        } else if (typeofTenant.isEmpty() && typeofTenant == null) {
+        } /*else if (typeofTenant.isEmpty() && typeofTenant == null) {
             showToast("Select Type of Tenant");
             return false;
         } else if (positionattheTower.isEmpty() && positionattheTower == null) {
             showToast("Enter Position at the Tower");
             return false;
-        } else return true;
+        }*/ else return true;
     }
 
     public boolean date_compare(String dateStartTenancy, String dateStartRadiation) {
