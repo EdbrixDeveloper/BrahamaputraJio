@@ -24,13 +24,13 @@ public class EarthResistanceTowerData {
         this.isSubmited = 0;
     }
 
-    public EarthResistanceTowerData(String earthType/*, String earthResistanceInOhms, String earthResistanceMeasuredDate*/) {
+    public EarthResistanceTowerData(String earthType, String earthResistanceInOhms, String earthResistanceMeasuredDate) {
         this.earthType = earthType;
-        //this.earthResistanceInOhms = earthResistanceInOhms;
-        //this.earthResistanceMeasuredDate = earthResistanceMeasuredDate;
+        this.earthResistanceInOhms = earthResistanceInOhms;
+        this.earthResistanceMeasuredDate = earthResistanceMeasuredDate;
         //this.isSubmited=true;//007
         this.isSubmited = 1;
-        if (!this.earthType.isEmpty() && !this.earthResistanceInOhms.isEmpty() && !this.earthResistanceMeasuredDate.isEmpty()) {
+        if (!this.earthType.isEmpty() /*&& !this.earthResistanceInOhms.isEmpty() && !this.earthResistanceMeasuredDate.isEmpty()*/) {
             this.isSubmited = 2;
         }/*else {
             this.isSubmited = 1;

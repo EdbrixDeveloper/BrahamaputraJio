@@ -40,10 +40,10 @@ public class Earth_Resistance_Tower extends BaseActivity {
     private static final String TAG = Earth_Resistance_Tower.class.getSimpleName();
     private TextView mEarthResistanceTowerTextViewTypeOfEarth;
     private TextView mEarthResistanceTowerTextViewTypeOfEarthVal;
-   // private TextView mEarthResistanceTowerTextViewEarthResistance;
-    //private EditText mEarthResistanceTowerEditTextEarthResistance;
-    //private TextView mEarthResistanceTowerTextViewDateOfearthResistanceMeasured;
-   // private EditText mEarthResistanceTowerEditTextDateOfearthResistanceMeasured;
+    private TextView mEarthResistanceTowerTextViewEarthResistance;
+    private EditText mEarthResistanceTowerEditTextEarthResistance;
+    private TextView mEarthResistanceTowerTextViewDateOfearthResistanceMeasured;
+    private EditText mEarthResistanceTowerEditTextDateOfearthResistanceMeasured;
 
     DecimalConversion decimalConversion;
     String str_typeOfEarth;
@@ -78,7 +78,7 @@ public class Earth_Resistance_Tower extends BaseActivity {
 
         setInputDetails();
 
-        /*final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+        final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
 
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear,
@@ -86,12 +86,12 @@ public class Earth_Resistance_Tower extends BaseActivity {
                 myCalendar.set(Calendar.YEAR, year);
                 myCalendar.set(Calendar.MONTH, monthOfYear);
                 myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                //updateLabel();
+                updateLabel();
             }
 
-        };*/
+        };
 
-        /*mEarthResistanceTowerEditTextDateOfearthResistanceMeasured.setOnClickListener(new View.OnClickListener() {
+        mEarthResistanceTowerEditTextDateOfearthResistanceMeasured.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DecimalFormatConversion();
@@ -102,33 +102,33 @@ public class Earth_Resistance_Tower extends BaseActivity {
                 dialog.getDatePicker().setMaxDate(new Date().getTime());
                 dialog.show();
             }
-        });*/
-        /*mEarthResistanceTowerEditTextEarthResistance.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        });
+        mEarthResistanceTowerEditTextEarthResistance.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     DecimalFormatConversion();
                 }
             }
-        });*/
+        });
     }
 
     private void assignViews() {
         mEarthResistanceTowerTextViewTypeOfEarth = (TextView) findViewById(R.id.earthResistanceTower_textView_typeOfEarth);
         mEarthResistanceTowerTextViewTypeOfEarthVal = (TextView) findViewById(R.id.earthResistanceTower_textView_typeOfEarth_val);
-        //mEarthResistanceTowerTextViewEarthResistance = (TextView) findViewById(R.id.earthResistanceTower_textView_earthResistance);
-        //mEarthResistanceTowerEditTextEarthResistance = (EditText) findViewById(R.id.earthResistanceTower_editText_earthResistance);
-        //mEarthResistanceTowerTextViewDateOfearthResistanceMeasured = (TextView) findViewById(R.id.earthResistanceTower_textView_dateOfearthResistanceMeasured);
-        //mEarthResistanceTowerEditTextDateOfearthResistanceMeasured = (EditText) findViewById(R.id.earthResistanceTower_editText_dateOfearthResistanceMeasured);
+        mEarthResistanceTowerTextViewEarthResistance = (TextView) findViewById(R.id.earthResistanceTower_textView_earthResistance);
+        mEarthResistanceTowerEditTextEarthResistance = (EditText) findViewById(R.id.earthResistanceTower_editText_earthResistance);
+        mEarthResistanceTowerTextViewDateOfearthResistanceMeasured = (TextView) findViewById(R.id.earthResistanceTower_textView_dateOfearthResistanceMeasured);
+        mEarthResistanceTowerEditTextDateOfearthResistanceMeasured = (EditText) findViewById(R.id.earthResistanceTower_editText_dateOfearthResistanceMeasured);
 
-        /*mEarthResistanceTowerEditTextEarthResistance.setFilters(new InputFilter[]{new DecimalDigitsInputFilter(10, 2)});
+        mEarthResistanceTowerEditTextEarthResistance.setFilters(new InputFilter[]{new DecimalDigitsInputFilter(10, 2)});
         getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN
-        );*/
+        );
     }
 
     public void DecimalFormatConversion() {
-        //mEarthResistanceTowerEditTextEarthResistance.setText(decimalConversion.convertDecimal(mEarthResistanceTowerEditTextEarthResistance.getText().toString()));
+        mEarthResistanceTowerEditTextEarthResistance.setText(decimalConversion.convertDecimal(mEarthResistanceTowerEditTextEarthResistance.getText().toString()));
     }
 
     private void initCombo() {
@@ -154,12 +154,12 @@ public class Earth_Resistance_Tower extends BaseActivity {
         });
     }
 
-    /*private void updateLabel() {
+    private void updateLabel() {
         String myFormat = "dd/MMM/yyyy";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
         mEarthResistanceTowerEditTextDateOfearthResistanceMeasured.setText(sdf.format(myCalendar.getTime()));
-    }*/
+    }
 
 
     private void setInputDetails() {
@@ -173,8 +173,8 @@ public class Earth_Resistance_Tower extends BaseActivity {
                 earthResistanceTowerData = hotoTransactionData.getEarthResistanceTowerData();
 
                 mEarthResistanceTowerTextViewTypeOfEarthVal.setText(earthResistanceTowerData.getEarthType());
-                //mEarthResistanceTowerEditTextEarthResistance.setText(earthResistanceTowerData.getEarthResistanceInOhms());
-                //mEarthResistanceTowerEditTextDateOfearthResistanceMeasured.setText(earthResistanceTowerData.getEarthResistanceMeasuredDate());
+                mEarthResistanceTowerEditTextEarthResistance.setText(earthResistanceTowerData.getEarthResistanceInOhms());
+                mEarthResistanceTowerEditTextDateOfearthResistanceMeasured.setText(earthResistanceTowerData.getEarthResistanceMeasuredDate());
 
 
             } else {
@@ -189,10 +189,10 @@ public class Earth_Resistance_Tower extends BaseActivity {
         try {
 
             String earthType = mEarthResistanceTowerTextViewTypeOfEarthVal.getText().toString().trim();
-            //String earthResistanceInOhms = mEarthResistanceTowerEditTextEarthResistance.getText().toString().trim();
-            //String earthResistanceMeasuredDate = mEarthResistanceTowerEditTextDateOfearthResistanceMeasured.getText().toString().trim();
+            String earthResistanceInOhms = mEarthResistanceTowerEditTextEarthResistance.getText().toString().trim();
+            String earthResistanceMeasuredDate = mEarthResistanceTowerEditTextDateOfearthResistanceMeasured.getText().toString().trim();
 
-            earthResistanceTowerData = new EarthResistanceTowerData(earthType /*earthResistanceInOhms, earthResistanceMeasuredDate*/);
+            earthResistanceTowerData = new EarthResistanceTowerData(earthType, earthResistanceInOhms, earthResistanceMeasuredDate);
             hotoTransactionData.setEarthResistanceTowerData(earthResistanceTowerData);
 
             Gson gson2 = new GsonBuilder().create();
