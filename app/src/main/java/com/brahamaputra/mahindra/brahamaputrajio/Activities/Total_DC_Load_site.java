@@ -99,7 +99,7 @@ public class Total_DC_Load_site extends BaseActivity {
                 DecimalFormatConversion();
                 if (checkValiadtion()) {
                     submitDetails();
-                    startActivity(new Intent(this, ActiveequipmentDetails.class));
+                    startActivity(new Intent(this, PowerManagementSystem.class));//ActiveequipmentDetails
                     finish();
                 }
                 return true;

@@ -441,7 +441,7 @@ public class Shelter extends BaseActivity {
                 return true;
             case R.id.menuSubmit:
                 submitDetails();
-                startActivity(new Intent(this, Media.class));
+                startActivity(new Intent(this, Battery_Set.class));//Media
                 finish();
                 return true;
 

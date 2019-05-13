@@ -508,13 +508,13 @@ public class ServoStabilizer extends BaseActivity {
                 if (mServoStabilizerTextViewServoStabilizerWorkingStatusVal.getText().toString().equals("Not Available")) {
                     submitDetails();
                     finish();
-                    startActivity(new Intent(this, DetailsOfUnusedMaterials.class));
+                    startActivity(new Intent(this, PhotoCaptureActivity.class));//DetailsOfUnusedMaterials
                     return true;
                 } else {
                     if (checkValidation() == true) {
                         submitDetails();
                         finish();
-                        startActivity(new Intent(this, DetailsOfUnusedMaterials.class));
+                        startActivity(new Intent(this, PhotoCaptureActivity.class));//DetailsOfUnusedMaterials
                         return true;
                     }
                 }

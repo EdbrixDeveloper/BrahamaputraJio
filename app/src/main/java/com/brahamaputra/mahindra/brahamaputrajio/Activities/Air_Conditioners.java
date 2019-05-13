@@ -549,7 +549,7 @@ public class Air_Conditioners extends BaseActivity {
                             //Save Final current reading and submit all AC data
                             //saveACRecords(currentPos);
                             submitDetails();
-                            startActivity(new Intent(Air_Conditioners.this, Solar_Power_System.class));
+                            startActivity(new Intent(Air_Conditioners.this, PowerPlantDetailsActivity.class));//Solar_Power_System
                             finish();
                         }
                         //}
@@ -818,7 +818,7 @@ public class Air_Conditioners extends BaseActivity {
                     // if (checkValidationOnNoOfAcSelection() == true) {
                     if (checkValidationOnChangeNoOfAcSelection(mAirConditionersTextViewNoOfAirConditionersACprovidedVal.getText().toString().trim(), mAirConditionersTextViewNumberOfACInWorkingConditionVal.getText().toString().trim(), "onSubmit") == true) {
                         submitDetails();
-                        startActivity(new Intent(this, Solar_Power_System.class));
+                        startActivity(new Intent(this, PowerPlantDetailsActivity.class));//Solar_Power_System
                         finish();
                     }
                 }
