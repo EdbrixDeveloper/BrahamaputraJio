@@ -704,7 +704,8 @@ public class PhotoCaptureActivity extends BaseActivity {
                 return true;
             case R.id.menuDone:
                 submitDetails();
-                setResult(RESULT_OK);
+                startActivity(new Intent(PhotoCaptureActivity.this, HotoSignatureActivity.class));//new
+                //setResult(RESULT_OK);14052019
                 finish();
                 return true;
         }

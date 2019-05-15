@@ -125,6 +125,9 @@ public class HotoSectionsListActivity extends BaseActivity {
                     case 15:
                         startActivityForResult(new Intent(HotoSectionsListActivity.this, PhotoCaptureActivity.class), RESULT_READING_COMPLETED);
                         break;
+                    case 16:
+                        startActivityForResult(new Intent(HotoSectionsListActivity.this, HotoSignatureActivity.class), RESULT_READING_COMPLETED);
+                        break;
 
                 }
             }
@@ -227,6 +230,8 @@ public class HotoSectionsListActivity extends BaseActivity {
                 return hotoTransactionData.getServoStabilizerData().getSubmited();
             case 15:
                 return hotoTransactionData.getSitePhotoCaptureData().getSubmited();
+            /*case 16:
+                return hotoTransactionData.getSitePhotoCaptureData().getSubmited();*/
 
         }
         return 0;

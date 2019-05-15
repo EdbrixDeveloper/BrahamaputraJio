@@ -151,6 +151,13 @@
             android:name=".Activities.PhotoCaptureActivity"
             android:label="Sections"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".Activities.HotoSignatureActivity"
+            android:label="SignaturePad"
+            android:screenOrientation="portrait" />
+
+
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="portrait"

@@ -66,6 +66,7 @@ public class HotoTransactionData {
     private ServoStabilizerData servoStabilizerData;
     //private DetailsOfUnusedMaterialsData detailsOfUnusedMaterialsData;
     private DetailsOfUnusedMaterialsParentData detailsOfUnusedMaterialsParentData;
+    private HotoDigitalSignatureData hotoDigitalSignatureData;
 
     public HotoTransactionData() {
         landDetailsData = new LandDetailsData();
@@ -89,6 +90,7 @@ public class HotoTransactionData {
         servoStabilizerData = new ServoStabilizerData();
         detailsOfUnusedMaterialsParentData = new DetailsOfUnusedMaterialsParentData();
         sitePhotoCaptureData = new SitePhotoCaptureData();
+        hotoDigitalSignatureData = new HotoDigitalSignatureData();
     }
 
     public String getUserId() {
@@ -365,6 +367,14 @@ public class HotoTransactionData {
         this.detailsOfUnusedMaterialsParentData = detailsOfUnusedMaterialsParentData;
     }
 
+    public HotoDigitalSignatureData getHotoDigitalSignatureData() {
+        return hotoDigitalSignatureData;
+    }
+
+    public void setHotoDigitalSignatureData(HotoDigitalSignatureData hotoDigitalSignatureData) {
+        this.hotoDigitalSignatureData = hotoDigitalSignatureData;
+    }
+
     public String getSiteId() {
         return siteId;
     }
@@ -441,7 +451,8 @@ public class HotoTransactionData {
                 (acdb_dcdb_data.getSubmited() == 2) &&
                 (servoStabilizerData.getSubmited() == 2) &&
                 (detailsOfUnusedMaterialsParentData.getSubmited() == 2) &&
-                (sitePhotoCaptureData.getSubmited() == 2)) {
+                (sitePhotoCaptureData.getSubmited() == 2) &&
+                (hotoDigitalSignatureData.getSubmited() == 2)) {
             return true;
         } else {
             return false;
@@ -517,7 +528,8 @@ public class HotoTransactionData {
                 (acdb_dcdb_data.getSubmited() == 2 || acdb_dcdb_data.getSubmited() == 1) &&
                 (servoStabilizerData.getSubmited() == 2 || servoStabilizerData.getSubmited() == 1) &&
                 (detailsOfUnusedMaterialsParentData.getSubmited() == 2 || detailsOfUnusedMaterialsParentData.getSubmited() == 1) &&
-                (sitePhotoCaptureData.getSubmited() == 2 || sitePhotoCaptureData.getSubmited() == 1)) {
+                (sitePhotoCaptureData.getSubmited() == 2 || sitePhotoCaptureData.getSubmited() == 1) &&
+                (hotoDigitalSignatureData.getSubmited() == 2 || hotoDigitalSignatureData.getSubmited() == 1)) {
             return true;
         } else {
             return false;

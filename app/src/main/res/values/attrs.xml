@@ -29,4 +29,13 @@
     <declare-styleable name="CircleImageView">
         <attr name="name" format="string" />
     </declare-styleable>
+
+    <!--SignaturePad Added by 008 on date 14052019-->
+    <declare-styleable name="SignaturePad">
+        <attr name="penMinWidth" format="dimension" />
+        <attr name="penMaxWidth" format="dimension" />
+        <attr name="penColor" format="color" />
+        <attr name="velocityFilterWeight" format="float" />
+        <attr name="clearOnDoubleClick" format="boolean" />
+    </declare-styleable>
 </resources>
