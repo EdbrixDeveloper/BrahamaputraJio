@@ -230,8 +230,8 @@ public class HotoSectionsListActivity extends BaseActivity {
                 return hotoTransactionData.getServoStabilizerData().getSubmited();
             case 15:
                 return hotoTransactionData.getSitePhotoCaptureData().getSubmited();
-            /*case 16:
-                return hotoTransactionData.getSitePhotoCaptureData().getSubmited();*/
+            case 16:
+                return hotoTransactionData.getHotoDigitalSignatureData().getSubmited();
 
         }
         return 0;

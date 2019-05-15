@@ -152,6 +152,8 @@ public class HotoSignatureActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 mSignaturePadOfHandOver.clear();
+                HandOver = false;
+                base64SignatureHandOver = "";
             }
         });
 
@@ -159,6 +161,8 @@ public class HotoSignatureActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 mSignaturePadOfTakeOver.clear();
+                TakeOver = false;
+                base64SignatureTakeOver = "";
             }
         });
 
@@ -226,7 +230,7 @@ public class HotoSignatureActivity extends BaseActivity {
         }
 
         if (TakeOver == true) {
-            Bitmap signatureTakeOverBitmap = mSignaturePadOfHandOver.getSignatureBitmap();
+            Bitmap signatureTakeOverBitmap = mSignaturePadOfTakeOver.getSignatureBitmap();
             ByteArrayOutputStream streamSignatureTakeOver = new ByteArrayOutputStream();
             signatureTakeOverBitmap.compress(Bitmap.CompressFormat.JPEG, 70, streamSignatureTakeOver);
             byte[] bitmapSignatureTakeOverDataArray = streamSignatureTakeOver.toByteArray();
@@ -235,11 +239,10 @@ public class HotoSignatureActivity extends BaseActivity {
         if (base64SignatureHandOver.isEmpty() || base64SignatureHandOver == null) {
             showToast("Signature of Person who handing Over is mandatory field. ");
             return false;
-        } else if (base64SignatureHandOver.isEmpty() || base64SignatureHandOver == null) {
+        } else if (base64SignatureTakeOver.isEmpty() || base64SignatureTakeOver == null) {
             showToast("Signature of Person who taking Over is mandatory field. ");
             return false;
-        }
-        return true;
+        } else return true;
     }
 
     private void setInputDetails() {
