@@ -1,34 +1,100 @@
 {
   "project_info": {
-    "project_number": "983090645513",
-    "firebase_url": "https://brahamaputrajio.firebaseio.com",
-    "project_id": "brahamaputrajio",
-    "storage_bucket": "brahamaputrajio.appspot.com"
+    "project_number": "609392399146",
+    "firebase_url": "https://bramhaputra-firebase09.firebaseio.com",
+    "project_id": "bramhaputra-firebase09",
+    "storage_bucket": "bramhaputra-firebase09.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:983090645513:android:c581fca08ab2d7c0",
+        "mobilesdk_app_id": "1:609392399146:android:be9c8d2c2acc726e",
         "android_client_info": {
-          "package_name": "com.brahamaputra.mahindra.brahamaputrajio"
+          "package_name": "com.brahamaputra.mahindra.brahamaputra"
         }
       },
       "oauth_client": [
         {
-          "client_id": "983090645513-1hv9q48u8vaoklsqk8hq6lsbgto29bdc.apps.googleusercontent.com",
+          "client_id": "609392399146-063g7fe192c57u6rm8oolbfth8iscie0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.brahamaputra.mahindra.brahamaputra",
+            "certificate_hash": "c886c0d34b273a11ffc307412e91e9c6aebdbdee"
+          }
+        },
+        {
+          "client_id": "609392399146-9aa9s8rkek910a1cfmid3v59tg8usa4e.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA1D95CBs3DDvCSyPYDwqHTphjpVgZl1z8"
+          "current_key": "AIzaSyAD0L4koYSCSJeaiv277WQhqif2cOdhjAM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "983090645513-1hv9q48u8vaoklsqk8hq6lsbgto29bdc.apps.googleusercontent.com",
+              "client_id": "609392399146-9aa9s8rkek910a1cfmid3v59tg8usa4e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:609392399146:android:c581fca08ab2d7c0",
+        "android_client_info": {
+          "package_name": "com.brahamaputra.mahindra.brahamaputrajio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "609392399146-9aa9s8rkek910a1cfmid3v59tg8usa4e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAD0L4koYSCSJeaiv277WQhqif2cOdhjAM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "609392399146-9aa9s8rkek910a1cfmid3v59tg8usa4e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:609392399146:android:15748aaad14c4205",
+        "android_client_info": {
+          "package_name": "com.brahamaputra.mahindra.brahamaputravendor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "609392399146-9aa9s8rkek910a1cfmid3v59tg8usa4e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAD0L4koYSCSJeaiv277WQhqif2cOdhjAM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "609392399146-9aa9s8rkek910a1cfmid3v59tg8usa4e.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
